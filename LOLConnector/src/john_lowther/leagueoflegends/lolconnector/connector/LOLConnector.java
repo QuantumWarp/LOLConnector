@@ -1,5 +1,9 @@
 package john_lowther.leagueoflegends.lolconnector.connector;
 
+/**
+ * Has methods to help all connection classes. Also acts as a label.
+ * @author John Lowther
+ */
 public abstract class LOLConnector {
 
 	/**
@@ -8,12 +12,7 @@ public abstract class LOLConnector {
 	 * @param paramName
 	 * @param param
 	 */
-	protected void addParamToRequest(String request, String paramName, Object param) {
-		if (!request.contains("?"))
-			request += "?";
-		else
-			request += "&";
-		
-		request += paramName + "=" + param.toString();
+	protected String addParamToRequest(String request, String paramName, Object param) {
+		return request + (request.contains("?") ? "&" : "?") + paramName + "=" + param.toString();
 	}
 }

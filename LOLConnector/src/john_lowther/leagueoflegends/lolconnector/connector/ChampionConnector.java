@@ -3,7 +3,7 @@ package john_lowther.leagueoflegends.lolconnector.connector;
 import john_lowther.leagueoflegends.lolconnector.dataenums.Region;
 
 /**
- * Champion requests
+ * Provides champion requests.
  * @author John Lowther
  */
 public class ChampionConnector extends LOLConnector {
@@ -31,7 +31,7 @@ public class ChampionConnector extends LOLConnector {
 	public String getChampions(Region region, String version, boolean freeToPlay) {
 		String request = String.format(allChampionRequest, region.getCode(), version);
 		
-		addParamToRequest(request, "freeToPlay", freeToPlay);
+		request = addParamToRequest(request, "freeToPlay", freeToPlay);
 		
 		return Connector.getInstance().submitApiRequest(request);
 	}

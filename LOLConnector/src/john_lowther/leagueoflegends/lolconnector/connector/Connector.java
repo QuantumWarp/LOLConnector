@@ -11,7 +11,7 @@ import john_lowther.leagueoflegends.lolconnector.fileio.KeyReader;
  * Provides general connection to the Riot API.
  * @author John Lowther
  */
-public class Connector {
+public class Connector extends LOLConnector {
 	private static Connector instance;
 	
 	/**
@@ -42,7 +42,7 @@ public class Connector {
 	 * @return response
 	 */
 	public String submitRequest(String baseUrl, String api_key) {
-		return submitRequest(baseUrl + "?api_key=" + api_key);
+		return submitRequest(addParamToRequest(baseUrl, "api_key", api_key));
 	}
 	
 	/**
