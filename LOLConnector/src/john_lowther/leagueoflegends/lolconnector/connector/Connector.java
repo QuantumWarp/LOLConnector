@@ -19,7 +19,7 @@ public class Connector {
 	 * @return Connector
 	 */
  	public static Connector getInstance() {
-		if (instance != null) {
+		if (instance == null) {
 			instance = new Connector();
 		}
 		
@@ -32,7 +32,7 @@ public class Connector {
 	 * @return response
 	 */
 	public String submitApiRequest(String baseUrl) {
-		return submitRequest(baseUrl, new KeyReader().getApiKey());
+		return submitRequest(baseUrl, KeyReader.getApiKey());
 	}
 	
 	/**

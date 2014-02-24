@@ -11,15 +11,19 @@ import java.io.IOException;
  * @author John Lowther
  */
 public class KeyReader {
-	private String api_keyLocation = "api_key.txt";
+	private static String apikeyLocation = "api_key.txt";
+	private static String apikey = null;
 	
 	/**
 	 * Method that returns the api_key, based on the file name.
 	 * @return api_key
 	 */
-	public String getApiKey() {
+	public static String getApiKey() {
+		if (apikey != null)
+			return apikey;
+		
 	    try(
-	    	BufferedReader br = new BufferedReader(new FileReader(api_keyLocation))) {
+	    	BufferedReader br = new BufferedReader(new FileReader(apikeyLocation))) {
 	        String line = br.readLine();
 	        return line;
 	        
@@ -33,11 +37,16 @@ public class KeyReader {
 		return null;
 	}
 
-	public String getApi_keyLocation() {
-		return api_keyLocation;
+	public static String resetAndGetApiKey() {
+		apikey = null;
+		return getApiKey();
+	}
+	
+	public static String getApikeyLocation() {
+		return apikeyLocation;
 	}
 
-	public void setApi_keyLocation(String api_keyLocation) {
-		this.api_keyLocation = api_keyLocation;
+	public static void setApikeyLocation(String apikeyLocation) {
+		KeyReader.apikeyLocation = apikeyLocation;
 	}
 }
