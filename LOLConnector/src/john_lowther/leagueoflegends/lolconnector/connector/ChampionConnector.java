@@ -19,6 +19,18 @@ public class ChampionConnector extends LOLConnector {
 	}
 	
 	/**
+	 * Default champion retrieval. Uses latest supported version.
+	 * @param region
+	 * @return JSON champions
+	 */
+	public String getChampions(Region region) {
+		String request = String.format(allChampionRequest, region.getCode(), 
+				Version.getLatest(getSupportedVersions()));
+		
+		return Connector.getInstance().submitApiRequest(request);
+	}
+	
+	/**
 	 * Default champion retrieval
 	 * @param region
 	 * @param version
