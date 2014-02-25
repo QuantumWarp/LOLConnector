@@ -1,7 +1,7 @@
 package john_lowther.leagueoflegends.lolconnector.connector;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import john_lowther.leagueoflegends.lolconnector.dataenums.Region;
 import john_lowther.leagueoflegends.lolconnector.dataenums.Version;
@@ -21,8 +21,8 @@ import john_lowther.leagueoflegends.lolconnector.exceptions.VersionNotSupportedE
  * @author John Lowther
  */
 public abstract class LOLConnector {
-	protected ArrayList<Region> supportedRegions;
-	protected ArrayList<Version> supportedVersions;
+	protected List<Region> supportedRegions;
+	protected List<Version> supportedVersions;
 	private boolean isValidating;
 	private static final String apiUrl = "https://prod.api.pvp.net";
 	
@@ -72,19 +72,19 @@ public abstract class LOLConnector {
 	
 //================== Getters and Setters ==================//
 	
-	protected ArrayList<Region> getSupportedRegions() {
+	protected List<Region> getSupportedRegions() {
 		return supportedRegions;
 	}
 	
 	protected void setSupportedRegions(Region... regions) {
-		supportedRegions = (ArrayList<Region>) Arrays.asList(regions);
+		supportedRegions = Arrays.asList(regions);
 	}
 	
-	protected ArrayList<Version> getSupportedVersions() {
+	protected List<Version> getSupportedVersions() {
 		return supportedVersions;
 	}
 	
 	protected void setSupportedVersions(Version... versions) {
-		supportedVersions = (ArrayList<Version>) Arrays.asList(versions);
+		supportedVersions = Arrays.asList(versions);
 	}
 }
