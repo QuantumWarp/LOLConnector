@@ -2,6 +2,7 @@ package john_lowther.leagueoflegends.lolconnector.connector;
 
 import john_lowther.leagueoflegends.lolconnector.dataenums.Region;
 import john_lowther.leagueoflegends.lolconnector.dataenums.Version;
+import john_lowther.leagueoflegends.lolconnector.exceptions.NotSupportedException;
 
 /**
  * Provides champion requests.
@@ -30,7 +31,8 @@ public class ChampionConnector extends LOLConnector {
 	 * @param freeToPlay true returns only free to play champions
 	 * @return JSON champions
 	 */
-	public String getChampions(Region region, Version version, Boolean freeToPlay) {
+	public String getChampions(Region region, Version version, Boolean freeToPlay) 
+			throws NotSupportedException {
 		String request = constructRequest(allChampionRequest, region, version);
 		
 		if (freeToPlay != null)

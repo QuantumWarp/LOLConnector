@@ -1,10 +1,10 @@
 package john_lowther.leagueoflegends.lolconnector.exceptions;
 
 /**
- * Thrown when Version is not supported in the request.
+ * Indicates not supported
  * @author John Lowther
  */
 @SuppressWarnings("serial")
-public class VersionNotSupportedException extends NotSupportedException {
+public class NotSupportedException extends RuntimeException {
 
 }
