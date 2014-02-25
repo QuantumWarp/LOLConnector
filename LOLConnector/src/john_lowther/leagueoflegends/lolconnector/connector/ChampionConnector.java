@@ -9,7 +9,7 @@ import john_lowther.leagueoflegends.lolconnector.dataenums.Version;
  * @author John Lowther
  */
 public class ChampionConnector extends LOLConnector {
-	private final String allChampionRequest = "https://prod.api.pvp.net/api/lol/%s/%s/champion";
+	private final String allChampionRequest = "/api/lol/%s/%s/champion";
 	
 	public ChampionConnector() {
 		setSupportedRegions(Region.BRAZIL, Region.EU_NORDIC_AND_EAST, Region.EU_WEST,
@@ -19,40 +19,17 @@ public class ChampionConnector extends LOLConnector {
 	}
 	
 	/**
-	 * Default champion retrieval. Uses latest supported version.
-	 * @param region
-	 * @return JSON champions
-	 */
-	public String getChampions(Region region) {
-		String request = String.format(allChampionRequest, region.getCode(), 
-				Version.getLatest(getSupportedVersions()));
-		
-		return Connector.getInstance().submitApiRequest(request);
-	}
-	
-	/**
-	 * Default champion retrieval
-	 * @param region
-	 * @param version
-	 * @return JSON champions
-	 */
-	public String getChampions(Region region, String version) {
-		String request = String.format(allChampionRequest, region.getCode(), version);
-		
-		return Connector.getInstance().submitApiRequest(request);
-	}
-	
-	/**
 	 * Parametered champion retrieval
 	 * @param region
 	 * @param version
 	 * @param freeToPlay true returns only free to play champions
 	 * @return JSON champions
 	 */
-	public String getChampions(Region region, String version, boolean freeToPlay) {
-		String request = String.format(allChampionRequest, region.getCode(), version);
+	public String getChampions(Region region, Version version, Boolean freeToPlay) {
+		String request = constructRequest(allChampionRequest, region, version);
 		
-		request = addParamToRequest(request, "freeToPlay", freeToPlay);
+		if (freeToPlay != null)
+			request = addParamToRequest(request, "freeToPlay", freeToPlay);
 		
 		return Connector.getInstance().submitApiRequest(request);
 	}
