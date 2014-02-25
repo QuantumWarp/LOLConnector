@@ -1,5 +1,7 @@
 package john_lowther.leagueoflegends.lolconnector.dataenums;
 
+import java.util.ArrayList;
+
 /**
  * League of Legends version codes and values.
  * @author John Lowther
@@ -30,14 +32,14 @@ public enum Version {
     
 	/**
 	 * Gets the latest version from an array of version enums.
-	 * @param versions
+	 * @param supportedVersions
 	 * @return latest version
 	 */
-	public static Version getLatest(Version[] versions) {
+	public static Version getLatest(ArrayList<Version> supportedVersions) {
 		float latest = 0f;
 		Version latestVersion = null;
 		
-		for (Version version : versions) {
+		for (Version version : supportedVersions) {
 			if (latest < version.getValue()) {
 				latest = version.getValue();
 				latestVersion = version;

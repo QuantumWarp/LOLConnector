@@ -1,7 +1,12 @@
 package john_lowther.leagueoflegends.lolconnector.connector;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import john_lowther.leagueoflegends.lolconnector.dataenums.Region;
 import john_lowther.leagueoflegends.lolconnector.dataenums.Version;
+import john_lowther.leagueoflegends.lolconnector.exceptions.RegionNotSupportedException;
+import john_lowther.leagueoflegends.lolconnector.exceptions.VersionNotSupportedException;
 
 /**
  * Has methods to help all connection classes. Also acts as a label.
@@ -16,9 +21,14 @@ import john_lowther.leagueoflegends.lolconnector.dataenums.Version;
  * @author John Lowther
  */
 public abstract class LOLConnector {
-	protected Region[] supportedRegions;
-	protected Version[] supportedVersions;
+	protected ArrayList<Region> supportedRegions;
+	protected ArrayList<Version> supportedVersions;
+	private boolean isValidating;
 	private static final String apiUrl = "https://prod.api.pvp.net";
+	
+	public LOLConnector(boolean isValidating) {
+		this.isValidating = isValidating;
+	}
 
 	/**
 	 * Appends the string onto the end of the base apiUrl.
@@ -26,10 +36,21 @@ public abstract class LOLConnector {
 	 * @param region
 	 * @param version
 	 * @return complete request string without params
+	 * @throws VersionNotSupportedException 
+	 * @throws RegionNotSupportedException 
 	 */
-	protected String constructRequest(String append, Region region, Version version) {
+	protected String constructRequest(String append, Region region, Version version) 
+			throws VersionNotSupportedException, RegionNotSupportedException {
 		if (version == null)
 			version = Version.getLatest(supportedVersions);
+		
+		if (isValidating) {
+			if (!supportedRegions.contains(region))
+				throw new RegionNotSupportedException();
+			if (!supportedVersions.contains(version))
+				throw new VersionNotSupportedException();
+		}
+		
 		
 		int splitPoint = append.indexOf("%s", append.indexOf("%s") + 2) + 2;
 		
@@ -51,19 +72,19 @@ public abstract class LOLConnector {
 	
 //================== Getters and Setters ==================//
 	
-	protected Region[] getSupportedRegions() {
+	protected ArrayList<Region> getSupportedRegions() {
 		return supportedRegions;
 	}
 	
 	protected void setSupportedRegions(Region... regions) {
-		supportedRegions = regions;
+		supportedRegions = (ArrayList<Region>) Arrays.asList(regions);
 	}
 	
-	protected Version[] getSupportedVersions() {
+	protected ArrayList<Version> getSupportedVersions() {
 		return supportedVersions;
 	}
 	
 	protected void setSupportedVersions(Version... versions) {
-		supportedVersions = versions;
+		supportedVersions = (ArrayList<Version>) Arrays.asList(versions);
 	}
 }

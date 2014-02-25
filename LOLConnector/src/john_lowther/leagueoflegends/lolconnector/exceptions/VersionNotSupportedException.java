@@ -5,6 +5,6 @@ package john_lowther.leagueoflegends.lolconnector.exceptions;
  * @author John Lowther
  */
 @SuppressWarnings("serial")
-public class VersionNotSupportedException extends Exception {
+public class VersionNotSupportedException extends RuntimeException {
 
 }
