@@ -10,6 +10,8 @@ import john_lowther.leagueoflegends.lolconnector.exceptions.NotSupportedExceptio
  * @author John Lowther
  */
 public class LeagueConnector extends LOLConnector {
+	private final String leagueChallengerRequest = "/api/lol/{region}/v2.3/league/challenger";
+	private final String leagueEntryRequest = "/api/lol/%s/%s/league/by-summoner/%s/entry";
 	private final String leagueRequest = "/api/lol/%s/%s/league/by-summoner/%s";
 	
 	public LeagueConnector() {
@@ -39,6 +41,38 @@ public class LeagueConnector extends LOLConnector {
 		String request = constructRequest(leagueRequest, region, version);
 		
 		request = String.format(request, summonerId);
+		
+		return Connector.getInstance().submitApiRequest(request);
+	}
+	
+	/**
+	 * League retrieval by summoner entry
+	 * @param region (must be provided)
+	 * @param version (if null defaults to latest)
+	 * @param summonerId
+	 * @return JSON league info
+	 */
+	public String getLeagueEntry(Region region, Version version, String summonerId) 
+			throws NotSupportedException {
+		
+		String request = constructRequest(leagueEntryRequest, region, version);
+		
+		request = String.format(request, summonerId);
+		
+		return Connector.getInstance().submitApiRequest(request);
+	}
+	
+	/**
+	 * League retrieval by summoner
+	 * @param region (must be provided)
+	 * @param version (if null defaults to latest)
+	 * @param summonerId
+	 * @return JSON league info
+	 */
+	public String getLeagueChallenger(Region region, Version version) 
+			throws NotSupportedException {
+		
+		String request = constructRequest(leagueChallengerRequest, region, version);
 		
 		return Connector.getInstance().submitApiRequest(request);
 	}
