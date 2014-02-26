@@ -15,7 +15,8 @@ public enum Region {
 	LATIN_AMERICA_SOUTH ("las"),
 	OCEANIA_AUSTRAILIA ("aus"),
 	OCEANIA_NEW_ZEALAND ("nz"), 
-	OCEANIA ("oce");
+	OCEANIA ("oce"),
+	KOREA ("kr");
 	
 	private final String code;
 	
