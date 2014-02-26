@@ -18,10 +18,9 @@ public class ChampionConnector extends LOLConnector {
 	
 	public ChampionConnector(boolean isValidating) {
 		super(isValidating);
-		setSupportedRegions(Region.BRAZIL, Region.EU_NORDIC_AND_EAST, Region.EU_WEST,
+		setSupported(Version.ONE_POINT_ONE, Region.BRAZIL, Region.EU_NORDIC_AND_EAST, Region.EU_WEST,
 				Region.LATIN_AMERICA_NORTH, Region.LATIN_AMERICA_SOUTH,
-				Region.NORTH_AMERICA, Region.OCEANIA_AUSTRAILIA, Region.OCEANIA_NEW_ZEALAND);
-		setSupportedVersions(Version.ONE_POINT_ONE);
+				Region.NORTH_AMERICA, Region.OCEANIA);
 	}
 	
 	/**

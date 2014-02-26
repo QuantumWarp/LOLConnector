@@ -1,13 +1,16 @@
 package john_lowther.leagueoflegends.lolconnector.connector;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import john_lowther.leagueoflegends.lolconnector.dataenums.Region;
 import john_lowther.leagueoflegends.lolconnector.dataenums.Version;
 import john_lowther.leagueoflegends.lolconnector.exceptions.RegionNotSupportedException;
 import john_lowther.leagueoflegends.lolconnector.exceptions.VersionNotSupportedException;
 
+//Need to add URL encoding
 /**
  * Has methods to help all connection classes. Also acts as a label.
  * Connection classes should use the constructor format:
@@ -21,8 +24,7 @@ import john_lowther.leagueoflegends.lolconnector.exceptions.VersionNotSupportedE
  * @author John Lowther
  */
 public abstract class LOLConnector {
-	protected List<Region> supportedRegions;
-	protected List<Version> supportedVersions;
+	protected Map<Version, List<Region>> supportedMap = Version.getBlankVersionMap();
 	private boolean isValidating;
 	private static final String apiUrl = "https://prod.api.pvp.net";
 	
@@ -42,13 +44,13 @@ public abstract class LOLConnector {
 	protected String constructRequest(String append, Region region, Version version) 
 			throws VersionNotSupportedException, RegionNotSupportedException {
 		if (version == null)
-			version = Version.getLatest(supportedVersions);
+			version = Version.getLatest(supportedMap);
 		
 		if (isValidating) {
-			if (!supportedRegions.contains(region))
-				throw new RegionNotSupportedException();
-			if (!supportedVersions.contains(version))
+			if (supportedMap.get(version) ==  null)
 				throw new VersionNotSupportedException();
+			if (!supportedMap.get(version).contains(region))
+				throw new RegionNotSupportedException();
 		}
 		
 		
@@ -70,21 +72,35 @@ public abstract class LOLConnector {
 		return request + (request.contains("?") ? "&" : "?") + paramName + "=" + param.toString();
 	}
 	
-//================== Getters and Setters ==================//
-	
-	protected List<Region> getSupportedRegions() {
-		return supportedRegions;
+	/**
+	 * Sets what is supported for a particular version
+	 * @param version
+	 * @param regions
+	 */
+	protected void setSupported(Version version, Region... regions) {
+		supportedMap.put(version, Arrays.asList(regions));
 	}
 	
-	protected void setSupportedRegions(Region... regions) {
-		supportedRegions = Arrays.asList(regions);
+	/**
+	 * @return supported versions
+	 */
+	public List<Version> getSupportedVersions() {
+		List<Version> list = new ArrayList<Version>();
+		
+		for (Version version : Version.values()) {
+			if (supportedMap.get(version) != null) {
+				list.add(version);
+			}
+		}
+		
+		return list;
 	}
 	
-	protected List<Version> getSupportedVersions() {
-		return supportedVersions;
-	}
-	
-	protected void setSupportedVersions(Version... versions) {
-		supportedVersions = Arrays.asList(versions);
+	/**
+	 * @param version
+	 * @return supported regions for this version
+	 */
+	public List<Region> getSupportedRegions(Version version) {
+		return supportedMap.get(version);
 	}
 }

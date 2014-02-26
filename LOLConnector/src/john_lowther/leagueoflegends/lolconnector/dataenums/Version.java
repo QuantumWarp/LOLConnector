@@ -1,6 +1,8 @@
 package john_lowther.leagueoflegends.lolconnector.dataenums;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * League of Legends version codes and values.
@@ -31,22 +33,36 @@ public enum Version {
 	}
     
 	/**
-	 * Gets the latest version from an array of version enums.
-	 * @param supportedVersions
+	 * Gets the latest version from a verson map.
+	 * @param supported version map
 	 * @return latest version
 	 */
-	public static Version getLatest(List<Version> supportedVersions) {
+	public static Version getLatest(Map<Version, List<Region>> map) {
 		float latest = 0f;
 		Version latestVersion = null;
 		
-		for (Version version : supportedVersions) {
-			if (latest < version.getValue()) {
+		for (Version version : Version.values()) {
+			if (latest < version.getValue() && map.get(version) != null) {
 				latest = version.getValue();
 				latestVersion = version;
 			}
 		}
 		
 		return latestVersion;
+	}
+	
+	/**
+	 * Gets the blank map.
+	 * @return blank map
+	 */
+	public static Map<Version, List<Region>> getBlankVersionMap() {
+		Map<Version, List<Region>> map = new HashMap<Version, List<Region>>();
+		
+		for (Version version : Version.values()) {
+			map.put(version, null);
+		}
+		
+		return map;
 	}
 	
 	/**
