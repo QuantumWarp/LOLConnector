@@ -1,5 +1,6 @@
 package john_lowther.leagueoflegends.lolconnector.connector;
 
+import john_lowther.leagueoflegends.lolconnector.dataenums.GameType;
 import john_lowther.leagueoflegends.lolconnector.dataenums.Region;
 import john_lowther.leagueoflegends.lolconnector.dataenums.Version;
 import john_lowther.leagueoflegends.lolconnector.exceptions.NotSupportedException;
@@ -69,10 +70,12 @@ public class LeagueConnector extends LOLConnector {
 	 * @param summonerId
 	 * @return JSON league info
 	 */
-	public String getLeagueChallenger(Region region, Version version) 
+	public String getLeagueChallenger(Region region, Version version, GameType gameType) 
 			throws NotSupportedException {
 		
 		String request = constructRequest(leagueChallengerRequest, region, version);
+		
+		request = addParamToRequest(request, "type", gameType.toString());
 		
 		return Connector.getInstance().submitApiRequest(request);
 	}
