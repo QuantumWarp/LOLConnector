@@ -30,7 +30,7 @@ public class GameConnector extends LOLConnector {
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
 	 * @param summonerId
-	 * @return JSON champions
+	 * @return JSON game info
 	 */
 	public String getGame(Region region, Version version, String summonerId) 
 			throws NotSupportedException {
