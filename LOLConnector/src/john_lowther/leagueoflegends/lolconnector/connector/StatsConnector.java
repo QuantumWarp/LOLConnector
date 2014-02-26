@@ -25,7 +25,7 @@ public class StatsConnector extends LOLConnector {
 	}
 	
 	/**
-	 * Stats summary retrieval by summoner
+	 * Get player stats summaries by summoner ID. One summary is returned per queue type.
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
 	 * @param summonerId
@@ -41,7 +41,7 @@ public class StatsConnector extends LOLConnector {
 	}
 	
 	/**
-	 * Ranked stats retrieval by summoner
+	 * Get ranked stats by summoner ID. Includes statistics for Twisted Treeline and Summoner's Rift.
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
 	 * @param summonerId

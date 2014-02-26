@@ -24,7 +24,7 @@ public class ChampionConnector extends LOLConnector {
 	}
 	
 	/**
-	 * Parametered champion retrieval
+	 * Retrieve all champions
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
 	 * @param freeToPlay true returns only free to play champions

@@ -26,7 +26,7 @@ public class GameConnector extends LOLConnector {
 	}
 	
 	/**
-	 * Game retrieval by summoner
+	 * Get recent games by summoner ID
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
 	 * @param summonerId

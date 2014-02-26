@@ -29,7 +29,7 @@ public class LeagueConnector extends LOLConnector {
 	}
 	
 	/**
-	 * League retrieval by summoner
+	 * Retrieves leagues data for summoner, including leagues for all of summoner's teams
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
 	 * @param summonerId
@@ -46,7 +46,7 @@ public class LeagueConnector extends LOLConnector {
 	}
 	
 	/**
-	 * League retrieval by summoner entry
+	 * Retrieves leagues entry data for summoner, including league entries for all of summoner's teams
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
 	 * @param summonerId
@@ -63,7 +63,7 @@ public class LeagueConnector extends LOLConnector {
 	}
 	
 	/**
-	 * League retrieval by summoner
+	 * Retrieves challenger tier leagues
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
 	 * @param summonerId

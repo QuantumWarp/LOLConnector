@@ -26,7 +26,7 @@ public class TeamConnector extends LOLConnector {
 	}
 	
 	/**
-	 * Team retrieval by summoner id
+	 * Retrieves teams for given summoner ID
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
 	 * @param summonerId
@@ -42,7 +42,7 @@ public class TeamConnector extends LOLConnector {
 	}
 	
 	/**
-	 * Team retrieval by team ids
+	 * Get teams mapped by team ID for a given list of team IDs
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
 	 * @param summonerId

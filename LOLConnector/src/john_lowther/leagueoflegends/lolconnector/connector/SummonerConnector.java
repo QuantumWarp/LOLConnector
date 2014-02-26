@@ -30,7 +30,7 @@ public class SummonerConnector extends LOLConnector {
 	}
 	
 	/**
-	 * Masteries retrieval by summoner
+	 * Get mastery pages mapped by summoner ID for a given list of summoner IDs
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
 	 * @param summonerId
@@ -46,7 +46,7 @@ public class SummonerConnector extends LOLConnector {
 	}
 	
 	/**
-	 * Runes retrieval by summoner
+	 * Get rune pages mapped by summoner ID for a given list of summoner IDs
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
 	 * @param summonerId
@@ -62,7 +62,8 @@ public class SummonerConnector extends LOLConnector {
 	}
 	
 	/**
-	 * Summoner objects retrieval by names
+	 * Get summoner objects mapped by standardized summoner name for a given list of summoner names or 
+     * standardized summoner names
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
 	 * @param summonerNames
@@ -78,7 +79,7 @@ public class SummonerConnector extends LOLConnector {
 	}
 	
 	/**
-	 * Summoner names retrieval by ids
+	 * Get summoner names mapped by summoner ID for a given list of summoner IDs
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
 	 * @param summonerIds
@@ -94,7 +95,7 @@ public class SummonerConnector extends LOLConnector {
 	}
 	
 	/**
-	 * Summoner object retrieval by ids
+	 * Get summoner objects mapped by summoner ID for a given list of summoner IDs
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
 	 * @param summonerIds

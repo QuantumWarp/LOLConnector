@@ -35,7 +35,7 @@ public class LOLStaticDataConnector extends LOLConnector {
 	}
 	
 	/**
-	 * Champion list retrieval
+	 * Retrieves champion list.
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
 	 * @param summonerId
@@ -49,7 +49,7 @@ public class LOLStaticDataConnector extends LOLConnector {
 	}
 	
 	/**
-	 * Champion retrieval by id
+	 * Retrieves a champion by its id.
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
 	 * @param championId
@@ -65,7 +65,7 @@ public class LOLStaticDataConnector extends LOLConnector {
 	}
 	
 	/**
-	 * Item list retrieval
+	 * Retrieves item list.
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
 	 * @param summonerId
@@ -79,7 +79,7 @@ public class LOLStaticDataConnector extends LOLConnector {
 	}
 	
 	/**
-	 * Item retrieval by id
+	 * Retrieves item by its unique id.
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
 	 * @param itemId
@@ -95,7 +95,7 @@ public class LOLStaticDataConnector extends LOLConnector {
 	}
 	
 	/**
-	 * Mastery list retrieval
+	 * Retrieves mastery list.
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
 	 * @param masteryId
@@ -109,7 +109,7 @@ public class LOLStaticDataConnector extends LOLConnector {
 	}
 	
 	/**
-	 * Mastery retrieval by id
+	 * Retrieves mastery item by its unique id.
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
 	 * @param masteryId
@@ -125,7 +125,7 @@ public class LOLStaticDataConnector extends LOLConnector {
 	}	
 	
 	/**
-	 * Rune list retrieval
+	 * Retrieves rune list.
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
 	 * @param runeId
@@ -139,7 +139,7 @@ public class LOLStaticDataConnector extends LOLConnector {
 	}
 	
 	/**
-	 * Rune retrieval by id
+	 * Retrieves rune by its uniwue id.
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
 	 * @param runeId
@@ -155,7 +155,7 @@ public class LOLStaticDataConnector extends LOLConnector {
 	}
 	
 	/**
-	 * Summoner spell list retrieval
+	 * Retrieves summoner spell list.
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
 	 * @param summonerSpellId
@@ -169,7 +169,7 @@ public class LOLStaticDataConnector extends LOLConnector {
 	}
 	
 	/**
-	 * Summoner spell retrieval by id
+	 * Retrieves summoner spell by its unique id.
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
 	 * @param summonerSpellId
@@ -185,7 +185,7 @@ public class LOLStaticDataConnector extends LOLConnector {
 	}
 	
 	/**
-	 * Realm retrieval
+	 * Retrieve realm data.
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
 	 * @param realmId
