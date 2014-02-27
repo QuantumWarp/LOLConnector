@@ -1,6 +1,11 @@
 package john_lowther.leagueoflegends.lolconnector.connector;
 
+import john_lowther.leagueoflegends.lolconnector.dataenums.ChampData;
+import john_lowther.leagueoflegends.lolconnector.dataenums.ItemData;
+import john_lowther.leagueoflegends.lolconnector.dataenums.MasteryData;
 import john_lowther.leagueoflegends.lolconnector.dataenums.Region;
+import john_lowther.leagueoflegends.lolconnector.dataenums.RuneData;
+import john_lowther.leagueoflegends.lolconnector.dataenums.SpellData;
 import john_lowther.leagueoflegends.lolconnector.dataenums.Version;
 import john_lowther.leagueoflegends.lolconnector.exceptions.NotSupportedException;
 
@@ -41,9 +46,18 @@ public class LOLStaticDataConnector extends LOLConnector {
 	 * @param summonerId
 	 * @return JSON champion list info
 	 */
-	public String getChampionList(Region region, Version version) 
+	public String getChampionList(Region region, Version version, String locale, String dataDragonVersion, ChampData champData) 
 			throws NotSupportedException {
 		String request = constructRequest(championListRequest, region, version);
+		
+		if (locale != null)
+			request = addParamToRequest(request, "locale", locale);
+		
+		if (dataDragonVersion != null)
+			request = addParamToRequest(request, "version", dataDragonVersion);
+		
+		if (champData != null)
+			request = addParamToRequest(request, "champData", champData.getCode());
 		
 		return Connector.getInstance().submitApiRequest(request);
 	}
@@ -55,11 +69,20 @@ public class LOLStaticDataConnector extends LOLConnector {
 	 * @param championId
 	 * @return JSON champion info
 	 */
-	public String getChampion(Region region, Version version, String championId) 
+	public String getChampion(Region region, Version version, String championId, String locale, String dataDragonVersion, ChampData champData) 
 			throws NotSupportedException {
 		String request = constructRequest(championRequest, region, version);
 		
 		request = String.format(request, championId);
+
+		if (locale != null)
+			request = addParamToRequest(request, "locale", locale);
+		
+		if (dataDragonVersion != null)
+			request = addParamToRequest(request, "version", dataDragonVersion);
+		
+		if (champData != null)
+			request = addParamToRequest(request, "champData", champData.getCode());
 		
 		return Connector.getInstance().submitApiRequest(request);
 	}
@@ -71,9 +94,18 @@ public class LOLStaticDataConnector extends LOLConnector {
 	 * @param summonerId
 	 * @return JSON item list info
 	 */
-	public String getItemList(Region region, Version version) 
+	public String getItemList(Region region, Version version, String locale, String dataDragonVersion, ItemData itemData) 
 			throws NotSupportedException {
 		String request = constructRequest(itemListRequest, region, version);
+		
+		if (locale != null)
+			request = addParamToRequest(request, "locale", locale);
+		
+		if (dataDragonVersion != null)
+			request = addParamToRequest(request, "version", dataDragonVersion);
+		
+		if (itemData != null)
+			request = addParamToRequest(request, "itemData", itemData.getCode());
 		
 		return Connector.getInstance().submitApiRequest(request);
 	}
@@ -85,11 +117,20 @@ public class LOLStaticDataConnector extends LOLConnector {
 	 * @param itemId
 	 * @return JSON item info
 	 */
-	public String getItem(Region region, Version version, String itemId) 
+	public String getItem(Region region, Version version, String itemId, String locale, String dataDragonVersion, ItemData itemData) 
 			throws NotSupportedException {
 		String request = constructRequest(itemRequest, region, version);
 		
 		request = String.format(request, itemId);
+		
+		if (locale != null)
+			request = addParamToRequest(request, "locale", locale);
+		
+		if (dataDragonVersion != null)
+			request = addParamToRequest(request, "version", dataDragonVersion);
+		
+		if (itemData != null)
+			request = addParamToRequest(request, "itemData", itemData.getCode());
 		
 		return Connector.getInstance().submitApiRequest(request);
 	}
@@ -101,9 +142,18 @@ public class LOLStaticDataConnector extends LOLConnector {
 	 * @param masteryId
 	 * @return JSON mastery list info
 	 */
-	public String getMasteryList(Region region, Version version) 
+	public String getMasteryList(Region region, Version version, String locale, String dataDragonVersion, MasteryData masteryData) 
 			throws NotSupportedException {
 		String request = constructRequest(masteryListRequest, region, version);
+		
+		if (locale != null)
+			request = addParamToRequest(request, "locale", locale);
+		
+		if (dataDragonVersion != null)
+			request = addParamToRequest(request, "version", dataDragonVersion);
+		
+		if (masteryData != null)
+			request = addParamToRequest(request, "masteryData", masteryData.getCode());
 		
 		return Connector.getInstance().submitApiRequest(request);
 	}
@@ -115,11 +165,20 @@ public class LOLStaticDataConnector extends LOLConnector {
 	 * @param masteryId
 	 * @return JSON mastery info
 	 */
-	public String getMastery(Region region, Version version, String masteryId) 
+	public String getMastery(Region region, Version version, String masteryId, String locale, String dataDragonVersion, MasteryData masteryData) 
 			throws NotSupportedException {
 		String request = constructRequest(masteryRequest, region, version);
 		
 		request = String.format(request, masteryId);
+
+		if (locale != null)
+			request = addParamToRequest(request, "locale", locale);
+		
+		if (dataDragonVersion != null)
+			request = addParamToRequest(request, "version", dataDragonVersion);
+		
+		if (masteryData != null)
+			request = addParamToRequest(request, "masteryData", masteryData.getCode());
 		
 		return Connector.getInstance().submitApiRequest(request);
 	}	
@@ -131,9 +190,18 @@ public class LOLStaticDataConnector extends LOLConnector {
 	 * @param runeId
 	 * @return JSON rune list info
 	 */
-	public String getRuneList(Region region, Version version) 
+	public String getRuneList(Region region, Version version, String locale, String dataDragonVersion, RuneData runeData) 
 			throws NotSupportedException {
 		String request = constructRequest(runeListRequest, region, version);
+
+		if (locale != null)
+			request = addParamToRequest(request, "locale", locale);
+		
+		if (dataDragonVersion != null)
+			request = addParamToRequest(request, "version", dataDragonVersion);
+		
+		if (runeData != null)
+			request = addParamToRequest(request, "runeData", runeData.getCode());
 		
 		return Connector.getInstance().submitApiRequest(request);
 	}
@@ -145,11 +213,20 @@ public class LOLStaticDataConnector extends LOLConnector {
 	 * @param runeId
 	 * @return JSON rune info
 	 */
-	public String getRune(Region region, Version version, String runeId) 
+	public String getRune(Region region, Version version, String runeId, String locale, String dataDragonVersion, RuneData runeData) 
 			throws NotSupportedException {
 		String request = constructRequest(runeRequest, region, version);
 		
 		request = String.format(request, runeId);
+		
+		if (locale != null)
+			request = addParamToRequest(request, "locale", locale);
+		
+		if (dataDragonVersion != null)
+			request = addParamToRequest(request, "version", dataDragonVersion);
+		
+		if (runeData != null)
+			request = addParamToRequest(request, "runeData", runeData.getCode());
 		
 		return Connector.getInstance().submitApiRequest(request);
 	}
@@ -161,9 +238,18 @@ public class LOLStaticDataConnector extends LOLConnector {
 	 * @param summonerSpellId
 	 * @return JSON summoner spell list info
 	 */
-	public String getSummonerSpellList(Region region, Version version) 
+	public String getSummonerSpellList(Region region, Version version, String locale, String dataDragonVersion, SpellData spellData) 
 			throws NotSupportedException {
 		String request = constructRequest(summonerSpellListRequest, region, version);
+		
+		if (locale != null)
+			request = addParamToRequest(request, "locale", locale);
+		
+		if (dataDragonVersion != null)
+			request = addParamToRequest(request, "version", dataDragonVersion);
+		
+		if (spellData != null)
+			request = addParamToRequest(request, "spellData", spellData.getCode());
 		
 		return Connector.getInstance().submitApiRequest(request);
 	}
@@ -175,11 +261,20 @@ public class LOLStaticDataConnector extends LOLConnector {
 	 * @param summonerSpellId
 	 * @return JSON summoner spell info
 	 */
-	public String getSummonerSpell(Region region, Version version, String summonerSpellId) 
+	public String getSummonerSpell(Region region, Version version, String summonerSpellId, String locale, String dataDragonVersion, SpellData spellData) 
 			throws NotSupportedException {
 		String request = constructRequest(summonerSpellRequest, region, version);
 		
 		request = String.format(request, summonerSpellId);
+		
+		if (locale != null)
+			request = addParamToRequest(request, "locale", locale);
+		
+		if (dataDragonVersion != null)
+			request = addParamToRequest(request, "version", dataDragonVersion);
+		
+		if (spellData != null)
+			request = addParamToRequest(request, "spellData", spellData.getCode());
 		
 		return Connector.getInstance().submitApiRequest(request);
 	}
