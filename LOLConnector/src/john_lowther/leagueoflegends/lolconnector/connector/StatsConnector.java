@@ -1,6 +1,7 @@
 package john_lowther.leagueoflegends.lolconnector.connector;
 
 import john_lowther.leagueoflegends.lolconnector.dataenums.Region;
+import john_lowther.leagueoflegends.lolconnector.dataenums.Season;
 import john_lowther.leagueoflegends.lolconnector.dataenums.Version;
 import john_lowther.leagueoflegends.lolconnector.exceptions.NotSupportedException;
 
@@ -31,11 +32,14 @@ public class StatsConnector extends LOLConnector {
 	 * @param summonerId
 	 * @return JSON stats summary info
 	 */
-	public String getStatsSummary(Region region, Version version, String summonerId) 
+	public String getStatsSummary(Region region, Version version, String summonerId, Season season) 
 			throws NotSupportedException {
 		String request = constructRequest(statsSummaryRequest, region, version);
 		
 		request = String.format(request, summonerId);
+
+		if (season != null)
+			request = addParamToRequest(request, "season", season.getCode());
 		
 		return Connector.getInstance().submitApiRequest(request);
 	}
@@ -47,11 +51,14 @@ public class StatsConnector extends LOLConnector {
 	 * @param summonerId
 	 * @return JSON ranked stats info
 	 */
-	public String getRankedStats(Region region, Version version, String summonerId) 
+	public String getRankedStats(Region region, Version version, String summonerId, Season season) 
 			throws NotSupportedException {
 		String request = constructRequest(rankedStatsRequest, region, version);
 		
 		request = String.format(request, summonerId);
+
+		if (season != null)
+			request = addParamToRequest(request, "season", season.getCode());
 		
 		return Connector.getInstance().submitApiRequest(request);
 	}
