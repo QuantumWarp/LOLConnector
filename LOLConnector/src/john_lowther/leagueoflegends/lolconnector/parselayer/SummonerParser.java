@@ -12,7 +12,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 
-public class SummonerParser {
+public class SummonerParser extends Parser {
 	public long getSummonerId(Region region, String name) throws NotSupportedException, RequestException {
 		String json = new SummonerConnector().getSummonerObjectsByNames(region, null, name);
 		Map<String, SummonerDto> map = new Gson().fromJson(json, new TypeToken<Map<String, SummonerDto>>(){}.getType());

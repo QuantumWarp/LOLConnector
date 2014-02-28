@@ -21,13 +21,9 @@ public class LOLRetriever {
 	private StatsParser statsRequest = new StatsParser();
 	private SummonerParser summonerRequest = new SummonerParser();
 	private TeamParser teamRequest = new TeamParser();
-
-	public LOLRetriever() {
-		
-	}
 	
 	public LOLRetriever(Region defaultRegion) {
-		this.defaultRegion = defaultRegion;
+		setDefaultRegion(defaultRegion);
 	}
 	
 	public long getSummonerId(String name) throws NotSupportedException, RequestException {
@@ -72,5 +68,12 @@ public class LOLRetriever {
 	
 	public void setDefaultRegion(Region region) {
 		this.defaultRegion = region;
+		championRequest.setDefaultRegion(region);
+		gameRequest.setDefaultRegion(region);
+		leagueRequest.setDefaultRegion(region);
+		lolStaticDataRequest.setDefaultRegion(region);
+		statsRequest.setDefaultRegion(region);
+		summonerRequest.setDefaultRegion(region);
+		teamRequest.setDefaultRegion(region);
 	}
 }

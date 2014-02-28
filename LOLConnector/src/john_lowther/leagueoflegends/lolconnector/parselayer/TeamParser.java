@@ -1,5 +1,5 @@
 package john_lowther.leagueoflegends.lolconnector.parselayer;
 
-public class TeamParser {
+public class TeamParser extends Parser {
 
 }
