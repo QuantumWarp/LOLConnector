@@ -19,8 +19,7 @@ public class ChampionParser extends Parser {
 	 */
 	public ChampionListDto getChampions() 
 			throws NotSupportedException, RequestException {
-		String response = connector.getChampions(defaultRegion, null, null);
-		return parse(response, ChampionListDto.class);
+		return customChampionRequest(defaultRegion, null);
 	}
 	
 	/**
@@ -29,17 +28,16 @@ public class ChampionParser extends Parser {
 	 */
 	public ChampionListDto getFreeToPlayChampions() 
 			throws NotSupportedException, RequestException {
-		String response = connector.getChampions(defaultRegion, null, true);
-		return parse(response, ChampionListDto.class);
+		return customChampionRequest(defaultRegion, true);
 	}
 	
 	/**
 	 * Custom champion request.
 	 * @return ChampionListDto
 	 */
-	public ChampionListDto customChampionRequest(Region region, boolean freeToPlay) 
+	public ChampionListDto customChampionRequest(Region region, Boolean freeToPlay) 
 			throws NotSupportedException, RequestException{
-		String response = connector.getChampions(defaultRegion, null, true);
+		String response = connector.getChampions(defaultRegion, null, freeToPlay);
 		return parse(response, ChampionListDto.class);
 	}
 }

@@ -14,13 +14,12 @@ public class GameParser extends Parser {
 	GameConnector connector = new GameConnector();
 	
 	/**
-	 * Retrieve all recent games.
+	 * Retrieve all recent games by summoner id.
 	 * @return RecentGamesDto
 	 */
 	public RecentGamesDto getRecentGames(long summonerId) 
 			throws NotSupportedException, RequestException {
-		String response = connector.getGame(defaultRegion, null, String.valueOf(summonerId));
-		return parse(response, RecentGamesDto.class);
+		return customRecentGamesRequest(defaultRegion, summonerId);
 	}
 	
 	/**
