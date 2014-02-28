@@ -61,7 +61,7 @@ public class LOLStaticDataConnector extends LOLConnector {
 		if (champData != null)
 			request = addParamToRequest(request, "champData", champData.getCode());
 		
-		return Connector.getInstance().submitApiRequest(request);
+		return Connector.getInstance().submitApiRequest(request, false);
 	}
 	
 	/**
@@ -87,7 +87,7 @@ public class LOLStaticDataConnector extends LOLConnector {
 		if (champData != null)
 			request = addParamToRequest(request, "champData", champData.getCode());
 		
-		return Connector.getInstance().submitApiRequest(request);
+		return Connector.getInstance().submitApiRequest(request, false);
 	}
 	
 	/**
@@ -111,7 +111,7 @@ public class LOLStaticDataConnector extends LOLConnector {
 		if (itemData != null)
 			request = addParamToRequest(request, "itemData", itemData.getCode());
 		
-		return Connector.getInstance().submitApiRequest(request);
+		return Connector.getInstance().submitApiRequest(request, false);
 	}
 	
 	/**
@@ -137,7 +137,7 @@ public class LOLStaticDataConnector extends LOLConnector {
 		if (itemData != null)
 			request = addParamToRequest(request, "itemData", itemData.getCode());
 		
-		return Connector.getInstance().submitApiRequest(request);
+		return Connector.getInstance().submitApiRequest(request, false);
 	}
 	
 	/**
@@ -161,7 +161,7 @@ public class LOLStaticDataConnector extends LOLConnector {
 		if (masteryData != null)
 			request = addParamToRequest(request, "masteryData", masteryData.getCode());
 		
-		return Connector.getInstance().submitApiRequest(request);
+		return Connector.getInstance().submitApiRequest(request, false);
 	}
 	
 	/**
@@ -187,7 +187,7 @@ public class LOLStaticDataConnector extends LOLConnector {
 		if (masteryData != null)
 			request = addParamToRequest(request, "masteryData", masteryData.getCode());
 		
-		return Connector.getInstance().submitApiRequest(request);
+		return Connector.getInstance().submitApiRequest(request, false);
 	}	
 	
 	/**
@@ -211,7 +211,7 @@ public class LOLStaticDataConnector extends LOLConnector {
 		if (runeData != null)
 			request = addParamToRequest(request, "runeData", runeData.getCode());
 		
-		return Connector.getInstance().submitApiRequest(request);
+		return Connector.getInstance().submitApiRequest(request, false);
 	}
 	
 	/**
@@ -237,7 +237,7 @@ public class LOLStaticDataConnector extends LOLConnector {
 		if (runeData != null)
 			request = addParamToRequest(request, "runeData", runeData.getCode());
 		
-		return Connector.getInstance().submitApiRequest(request);
+		return Connector.getInstance().submitApiRequest(request, false);
 	}
 	
 	/**
@@ -261,7 +261,7 @@ public class LOLStaticDataConnector extends LOLConnector {
 		if (spellData != null)
 			request = addParamToRequest(request, "spellData", spellData.getCode());
 		
-		return Connector.getInstance().submitApiRequest(request);
+		return Connector.getInstance().submitApiRequest(request, false);
 	}
 	
 	/**
@@ -287,7 +287,7 @@ public class LOLStaticDataConnector extends LOLConnector {
 		if (spellData != null)
 			request = addParamToRequest(request, "spellData", spellData.getCode());
 		
-		return Connector.getInstance().submitApiRequest(request);
+		return Connector.getInstance().submitApiRequest(request, false);
 	}
 	
 	/**
@@ -302,6 +302,6 @@ public class LOLStaticDataConnector extends LOLConnector {
 			throws NotSupportedException, RequestException {
 		String request = constructRequest(realmRequest, region, version);
 		
-		return Connector.getInstance().submitApiRequest(request);
+		return Connector.getInstance().submitApiRequest(request, false);
 	}
 }

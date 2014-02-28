@@ -40,6 +40,17 @@ public class Connector {
 	}
 	
 	/**
+	 * Passes the base url and gets the api_key itself.
+	 * @param baseUrl
+	 * @param count
+	 * @return response
+	 * @throws RequestException 
+	 */
+	public String submitApiRequest(String baseUrl, boolean count) throws RequestException {
+		return submitRequest(baseUrl, KeyReader.getApiKey());
+	}
+	
+	/**
 	 * Passes in the api_key to the url.
 	 * @param baseUrl
 	 * @param api_key
@@ -47,6 +58,18 @@ public class Connector {
 	 * @throws RequestException 
 	 */
 	public String submitRequest(String baseUrl, String apikey) throws RequestException {
+		return submitRequest(baseUrl + (baseUrl.contains("?") ? "&" : "?") + "api_key=" + apikey);
+	}
+	
+	/**
+	 * Passes in the api_key to the url.
+	 * @param baseUrl
+	 * @param api_key
+	 * @param count
+	 * @return response
+	 * @throws RequestException 
+	 */
+	public String submitRequest(String baseUrl, String apikey, boolean count) throws RequestException {
 		return submitRequest(baseUrl + (baseUrl.contains("?") ? "&" : "?") + "api_key=" + apikey);
 	}
 	
