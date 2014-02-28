@@ -46,6 +46,10 @@ public class KeyReader {
 		return apikeyLocation;
 	}
 
+	public static void setApiKey(String apikey) {
+		KeyReader.apikey = apikey;
+	}
+	
 	public static void setApikeyLocation(String apikeyLocation) {
 		KeyReader.apikeyLocation = apikeyLocation;
 	}
