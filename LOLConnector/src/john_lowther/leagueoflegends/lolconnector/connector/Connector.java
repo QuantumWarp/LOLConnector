@@ -1,10 +1,13 @@
 package john_lowther.leagueoflegends.lolconnector.connector;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import john_lowther.leagueoflegends.lolconnector.dataenums.ConnectionResponse;
+import john_lowther.leagueoflegends.lolconnector.exceptions.RequestException;
 import john_lowther.leagueoflegends.lolconnector.fileio.KeyReader;
 
 /**
@@ -30,8 +33,9 @@ public class Connector {
 	 * Passes the base url and gets the api_key itself.
 	 * @param baseUrl
 	 * @return response
+	 * @throws RequestException 
 	 */
-	public String submitApiRequest(String baseUrl) {
+	public String submitApiRequest(String baseUrl) throws RequestException {
 		return submitRequest(baseUrl, KeyReader.getApiKey());
 	}
 	
@@ -40,8 +44,9 @@ public class Connector {
 	 * @param baseUrl
 	 * @param api_key
 	 * @return response
+	 * @throws RequestException 
 	 */
-	public String submitRequest(String baseUrl, String apikey) {
+	public String submitRequest(String baseUrl, String apikey) throws RequestException {
 		return submitRequest(baseUrl + (baseUrl.contains("?") ? "&" : "?") + "api_key=" + apikey);
 	}
 	
@@ -49,10 +54,11 @@ public class Connector {
 	 * Main method that actually does the connection work.
 	 * @param urlString
 	 * @return response
+	 * @throws RequestException 
 	 */
-	public String submitRequest(String urlString) {
+	public String submitRequest(String urlString) throws RequestException {
 		HttpURLConnection connection = null;  
-
+		
 		try {
 			URL url = new URL(urlString);
 			connection = (HttpURLConnection) url.openConnection();
@@ -68,11 +74,13 @@ public class Connector {
 			input.close();
 
 			return response.toString();
-		} catch (Exception e) {
-
-			e.printStackTrace();
-			return null;
-
+		} catch (IOException e) {
+			try {
+				throw new RequestException(ConnectionResponse.getFromCode(connection.getResponseCode()));
+			} catch (IOException e1) {
+				e1.printStackTrace();
+				return null;
+			}
 		} finally {
 			if(connection != null) {
 				connection.disconnect(); 

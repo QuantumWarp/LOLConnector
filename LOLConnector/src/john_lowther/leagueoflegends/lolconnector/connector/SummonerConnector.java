@@ -3,6 +3,7 @@ package john_lowther.leagueoflegends.lolconnector.connector;
 import john_lowther.leagueoflegends.lolconnector.dataenums.Region;
 import john_lowther.leagueoflegends.lolconnector.dataenums.Version;
 import john_lowther.leagueoflegends.lolconnector.exceptions.NotSupportedException;
+import john_lowther.leagueoflegends.lolconnector.exceptions.RequestException;
 
 /**
  * Provides summoner requests.
@@ -35,9 +36,10 @@ public class SummonerConnector extends LOLConnector {
 	 * @param version (if null defaults to latest)
 	 * @param summonerId
 	 * @return JSON summoner masteries info
+	 * @throws RequestException 
 	 */
 	public String getMasteries(Region region, Version version, String summonerId) 
-			throws NotSupportedException {
+			throws NotSupportedException, RequestException {
 		String request = constructRequest(masteriesRequest, region, version);
 		
 		request = String.format(request, summonerId);
@@ -51,9 +53,10 @@ public class SummonerConnector extends LOLConnector {
 	 * @param version (if null defaults to latest)
 	 * @param summonerId
 	 * @return JSON summoner runes info
+	 * @throws RequestException 
 	 */
 	public String getRunes(Region region, Version version, String summonerId) 
-			throws NotSupportedException {
+			throws NotSupportedException, RequestException {
 		String request = constructRequest(runesRequest, region, version);
 		
 		request = String.format(request, summonerId);
@@ -68,9 +71,10 @@ public class SummonerConnector extends LOLConnector {
 	 * @param version (if null defaults to latest)
 	 * @param summonerNames
 	 * @return JSON summoner info
+	 * @throws RequestException 
 	 */
 	public String getSummonerObjectsByNames(Region region, Version version, String summonerNames) 
-			throws NotSupportedException {
+			throws NotSupportedException, RequestException {
 		String request = constructRequest(summonerObjectsByNamesRequest, region, version);
 		
 		request = String.format(request, summonerNames);
@@ -84,9 +88,10 @@ public class SummonerConnector extends LOLConnector {
 	 * @param version (if null defaults to latest)
 	 * @param summonerIds
 	 * @return JSON summoner names info
+	 * @throws RequestException 
 	 */
 	public String getSummonerNames(Region region, Version version, String summonerIds) 
-			throws NotSupportedException {
+			throws NotSupportedException, RequestException {
 		String request = constructRequest(summonerNamesRequest, region, version);
 		
 		request = String.format(request, summonerIds);
@@ -100,9 +105,10 @@ public class SummonerConnector extends LOLConnector {
 	 * @param version (if null defaults to latest)
 	 * @param summonerIds
 	 * @return JSON summoner info
+	 * @throws RequestException 
 	 */
 	public String getSummonerObjectsByIds(Region region, Version version, String summonerIds) 
-			throws NotSupportedException {
+			throws NotSupportedException, RequestException {
 		String request = constructRequest(summonerObjectsByIdsRequest, region, version);
 		
 		request = String.format(request, summonerIds);

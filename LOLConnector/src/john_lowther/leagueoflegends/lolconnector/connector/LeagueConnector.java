@@ -4,6 +4,7 @@ import john_lowther.leagueoflegends.lolconnector.dataenums.GameType;
 import john_lowther.leagueoflegends.lolconnector.dataenums.Region;
 import john_lowther.leagueoflegends.lolconnector.dataenums.Version;
 import john_lowther.leagueoflegends.lolconnector.exceptions.NotSupportedException;
+import john_lowther.leagueoflegends.lolconnector.exceptions.RequestException;
 
 /**
  * Provides league requests.
@@ -35,9 +36,10 @@ public class LeagueConnector extends LOLConnector {
 	 * @param version (if null defaults to latest)
 	 * @param summonerId
 	 * @return JSON league info
+	 * @throws RequestException 
 	 */
 	public String getLeague(Region region, Version version, String summonerId) 
-			throws NotSupportedException {
+			throws NotSupportedException, RequestException {
 		
 		String request = constructRequest(leagueRequest, region, version);
 		
@@ -52,9 +54,10 @@ public class LeagueConnector extends LOLConnector {
 	 * @param version (if null defaults to latest)
 	 * @param summonerId
 	 * @return JSON league info
+	 * @throws RequestException 
 	 */
 	public String getLeagueEntry(Region region, Version version, String summonerId) 
-			throws NotSupportedException {
+			throws NotSupportedException, RequestException {
 		
 		String request = constructRequest(leagueEntryRequest, region, version);
 		
@@ -69,9 +72,10 @@ public class LeagueConnector extends LOLConnector {
 	 * @param version (if null defaults to latest)
 	 * @param summonerId
 	 * @return JSON league info
+	 * @throws RequestException 
 	 */
 	public String getLeagueChallenger(Region region, Version version, GameType gameType) 
-			throws NotSupportedException {
+			throws NotSupportedException, RequestException {
 		
 		String request = constructRequest(leagueChallengerRequest, region, version);
 		

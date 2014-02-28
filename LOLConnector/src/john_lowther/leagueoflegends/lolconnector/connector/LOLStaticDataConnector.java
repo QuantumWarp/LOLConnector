@@ -8,6 +8,7 @@ import john_lowther.leagueoflegends.lolconnector.dataenums.RuneData;
 import john_lowther.leagueoflegends.lolconnector.dataenums.SpellData;
 import john_lowther.leagueoflegends.lolconnector.dataenums.Version;
 import john_lowther.leagueoflegends.lolconnector.exceptions.NotSupportedException;
+import john_lowther.leagueoflegends.lolconnector.exceptions.RequestException;
 
 /**
  * Provides lol static data requests.
@@ -45,9 +46,10 @@ public class LOLStaticDataConnector extends LOLConnector {
 	 * @param version (if null defaults to latest)
 	 * @param summonerId
 	 * @return JSON champion list info
+	 * @throws RequestException 
 	 */
 	public String getChampionList(Region region, Version version, String locale, String dataDragonVersion, ChampData champData) 
-			throws NotSupportedException {
+			throws NotSupportedException, RequestException {
 		String request = constructRequest(championListRequest, region, version);
 		
 		if (locale != null)
@@ -68,9 +70,10 @@ public class LOLStaticDataConnector extends LOLConnector {
 	 * @param version (if null defaults to latest)
 	 * @param championId
 	 * @return JSON champion info
+	 * @throws RequestException 
 	 */
 	public String getChampion(Region region, Version version, String championId, String locale, String dataDragonVersion, ChampData champData) 
-			throws NotSupportedException {
+			throws NotSupportedException, RequestException {
 		String request = constructRequest(championRequest, region, version);
 		
 		request = String.format(request, championId);
@@ -93,9 +96,10 @@ public class LOLStaticDataConnector extends LOLConnector {
 	 * @param version (if null defaults to latest)
 	 * @param summonerId
 	 * @return JSON item list info
+	 * @throws RequestException 
 	 */
 	public String getItemList(Region region, Version version, String locale, String dataDragonVersion, ItemData itemData) 
-			throws NotSupportedException {
+			throws NotSupportedException, RequestException {
 		String request = constructRequest(itemListRequest, region, version);
 		
 		if (locale != null)
@@ -116,9 +120,10 @@ public class LOLStaticDataConnector extends LOLConnector {
 	 * @param version (if null defaults to latest)
 	 * @param itemId
 	 * @return JSON item info
+	 * @throws RequestException 
 	 */
 	public String getItem(Region region, Version version, String itemId, String locale, String dataDragonVersion, ItemData itemData) 
-			throws NotSupportedException {
+			throws NotSupportedException, RequestException {
 		String request = constructRequest(itemRequest, region, version);
 		
 		request = String.format(request, itemId);
@@ -141,9 +146,10 @@ public class LOLStaticDataConnector extends LOLConnector {
 	 * @param version (if null defaults to latest)
 	 * @param masteryId
 	 * @return JSON mastery list info
+	 * @throws RequestException 
 	 */
 	public String getMasteryList(Region region, Version version, String locale, String dataDragonVersion, MasteryData masteryData) 
-			throws NotSupportedException {
+			throws NotSupportedException, RequestException {
 		String request = constructRequest(masteryListRequest, region, version);
 		
 		if (locale != null)
@@ -164,9 +170,10 @@ public class LOLStaticDataConnector extends LOLConnector {
 	 * @param version (if null defaults to latest)
 	 * @param masteryId
 	 * @return JSON mastery info
+	 * @throws RequestException 
 	 */
 	public String getMastery(Region region, Version version, String masteryId, String locale, String dataDragonVersion, MasteryData masteryData) 
-			throws NotSupportedException {
+			throws NotSupportedException, RequestException {
 		String request = constructRequest(masteryRequest, region, version);
 		
 		request = String.format(request, masteryId);
@@ -189,9 +196,10 @@ public class LOLStaticDataConnector extends LOLConnector {
 	 * @param version (if null defaults to latest)
 	 * @param runeId
 	 * @return JSON rune list info
+	 * @throws RequestException 
 	 */
 	public String getRuneList(Region region, Version version, String locale, String dataDragonVersion, RuneData runeData) 
-			throws NotSupportedException {
+			throws NotSupportedException, RequestException {
 		String request = constructRequest(runeListRequest, region, version);
 
 		if (locale != null)
@@ -212,9 +220,10 @@ public class LOLStaticDataConnector extends LOLConnector {
 	 * @param version (if null defaults to latest)
 	 * @param runeId
 	 * @return JSON rune info
+	 * @throws RequestException 
 	 */
 	public String getRune(Region region, Version version, String runeId, String locale, String dataDragonVersion, RuneData runeData) 
-			throws NotSupportedException {
+			throws NotSupportedException, RequestException {
 		String request = constructRequest(runeRequest, region, version);
 		
 		request = String.format(request, runeId);
@@ -237,9 +246,10 @@ public class LOLStaticDataConnector extends LOLConnector {
 	 * @param version (if null defaults to latest)
 	 * @param summonerSpellId
 	 * @return JSON summoner spell list info
+	 * @throws RequestException 
 	 */
 	public String getSummonerSpellList(Region region, Version version, String locale, String dataDragonVersion, SpellData spellData) 
-			throws NotSupportedException {
+			throws NotSupportedException, RequestException {
 		String request = constructRequest(summonerSpellListRequest, region, version);
 		
 		if (locale != null)
@@ -260,9 +270,10 @@ public class LOLStaticDataConnector extends LOLConnector {
 	 * @param version (if null defaults to latest)
 	 * @param summonerSpellId
 	 * @return JSON summoner spell info
+	 * @throws RequestException 
 	 */
 	public String getSummonerSpell(Region region, Version version, String summonerSpellId, String locale, String dataDragonVersion, SpellData spellData) 
-			throws NotSupportedException {
+			throws NotSupportedException, RequestException {
 		String request = constructRequest(summonerSpellRequest, region, version);
 		
 		request = String.format(request, summonerSpellId);
@@ -285,9 +296,10 @@ public class LOLStaticDataConnector extends LOLConnector {
 	 * @param version (if null defaults to latest)
 	 * @param realmId
 	 * @return JSON realm info
+	 * @throws RequestException 
 	 */
 	public String getRealm(Region region, Version version) 
-			throws NotSupportedException {
+			throws NotSupportedException, RequestException {
 		String request = constructRequest(realmRequest, region, version);
 		
 		return Connector.getInstance().submitApiRequest(request);

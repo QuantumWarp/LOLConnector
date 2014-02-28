@@ -3,6 +3,7 @@ package john_lowther.leagueoflegends.lolconnector.connector;
 import john_lowther.leagueoflegends.lolconnector.dataenums.Region;
 import john_lowther.leagueoflegends.lolconnector.dataenums.Version;
 import john_lowther.leagueoflegends.lolconnector.exceptions.NotSupportedException;
+import john_lowther.leagueoflegends.lolconnector.exceptions.RequestException;
 
 /**
  * Provides champion requests.
@@ -31,9 +32,10 @@ public class GameConnector extends LOLConnector {
 	 * @param version (if null defaults to latest)
 	 * @param summonerId
 	 * @return JSON game info
+	 * @throws RequestException 
 	 */
 	public String getGame(Region region, Version version, String summonerId) 
-			throws NotSupportedException {
+			throws NotSupportedException, RequestException {
 		String request = constructRequest(gameRequest, region, version);
 		
 		request = String.format(request, summonerId);

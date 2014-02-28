@@ -3,6 +3,7 @@ package john_lowther.leagueoflegends.lolconnector.connector;
 import john_lowther.leagueoflegends.lolconnector.dataenums.Region;
 import john_lowther.leagueoflegends.lolconnector.dataenums.Version;
 import john_lowther.leagueoflegends.lolconnector.exceptions.NotSupportedException;
+import john_lowther.leagueoflegends.lolconnector.exceptions.RequestException;
 
 /**
  * Provides team requests.
@@ -31,9 +32,10 @@ public class TeamConnector extends LOLConnector {
 	 * @param version (if null defaults to latest)
 	 * @param summonerId
 	 * @return JSON teams info
+	 * @throws RequestException 
 	 */
 	public String getTeamsBySummonerId(Region region, Version version, String summonerId) 
-			throws NotSupportedException {
+			throws NotSupportedException, RequestException {
 		String request = constructRequest(teamsBySummonerIdRequest, region, version);
 		
 		request = String.format(request, summonerId);
@@ -47,9 +49,10 @@ public class TeamConnector extends LOLConnector {
 	 * @param version (if null defaults to latest)
 	 * @param summonerId
 	 * @return JSON teams info
+	 * @throws RequestException 
 	 */
 	public String getTeamsByTeamIds(Region region, Version version, String teamIds) 
-			throws NotSupportedException {
+			throws NotSupportedException, RequestException {
 		String request = constructRequest(teamsByTeamIdsRequest, region, version);
 		
 		request = String.format(request, teamIds);
