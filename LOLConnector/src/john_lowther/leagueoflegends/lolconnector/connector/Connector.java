@@ -106,7 +106,7 @@ public class Connector {
 			return response.toString();
 		} catch (IOException e) {
 			try {
-				throw new RequestException(ConnectionResponse.getFromCode(connection.getResponseCode()));
+				throw new RequestException(ConnectionResponse.getFromCode(connection.getResponseCode()), urlString);
 			} catch (IOException e1) {
 				e1.printStackTrace();
 				return null;

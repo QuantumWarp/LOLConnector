@@ -12,7 +12,7 @@ import john_lowther.leagueoflegends.lolconnector.exceptions.RequestException;
  * @author John Lowther
  */
 public class LeagueConnector extends LOLConnector {
-	private final String leagueChallengerRequest = "/api/lol/{region}/v2.3/league/challenger";
+	private final String leagueChallengerRequest = "/api/lol/%s/%s/league/challenger";
 	private final String leagueEntryRequest = "/api/lol/%s/%s/league/by-summoner/%s/entry";
 	private final String leagueRequest = "/api/lol/%s/%s/league/by-summoner/%s";
 	
