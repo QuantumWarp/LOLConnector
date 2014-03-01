@@ -61,67 +61,100 @@ public class AggregatedStatsDto {
 	private int totalTripleKills;	
 	private int totalTurretsKilled;	
 	private int totalUnrealKills;
-	
+
+	/**
+	 * Dominion only.
+	 */
 	public int getAverageAssists() {
 		return averageAssists;
 	}
 	public void setAverageAssists(int averageAssists) {
 		this.averageAssists = averageAssists;
 	}
+	/**
+	 * Dominion only.
+	 */	
 	public int getAverageChampionsKilled() {
 		return averageChampionsKilled;
 	}
 	public void setAverageChampionsKilled(int averageChampionsKilled) {
 		this.averageChampionsKilled = averageChampionsKilled;
 	}
+	/**
+	 * Dominion only.
+	 */
 	public int getAverageCombatPlayerScore() {
 		return averageCombatPlayerScore;
 	}
 	public void setAverageCombatPlayerScore(int averageCombatPlayerScore) {
 		this.averageCombatPlayerScore = averageCombatPlayerScore;
 	}
+	/**
+	 * Dominion only.
+	 */
 	public int getAverageNodeCapture() {
 		return averageNodeCapture;
 	}
 	public void setAverageNodeCapture(int averageNodeCapture) {
 		this.averageNodeCapture = averageNodeCapture;
 	}
+	/**
+	 * Dominion only.
+	 */
 	public int getAverageNodeCaptureAssist() {
 		return averageNodeCaptureAssist;
 	}
 	public void setAverageNodeCaptureAssist(int averageNodeCaptureAssist) {
 		this.averageNodeCaptureAssist = averageNodeCaptureAssist;
 	}
+	/**
+	 * Dominion only.
+	 */
 	public int getAverageNodeNeutralize() {
 		return averageNodeNeutralize;
 	}
 	public void setAverageNodeNeutralize(int averageNodeNeutralize) {
 		this.averageNodeNeutralize = averageNodeNeutralize;
 	}
+	/**
+	 * Dominion only.
+	 */
 	public int getAverageNodeNeutralizeAssist() {
 		return averageNodeNeutralizeAssist;
 	}
 	public void setAverageNodeNeutralizeAssist(int averageNodeNeutralizeAssist) {
 		this.averageNodeNeutralizeAssist = averageNodeNeutralizeAssist;
 	}
+	/**
+	 * Dominion only.
+	 */
 	public int getAverageNumDeaths() {
 		return averageNumDeaths;
 	}
 	public void setAverageNumDeaths(int averageNumDeaths) {
 		this.averageNumDeaths = averageNumDeaths;
 	}
+	/**
+	 * Dominion only.
+	 */
 	public int getAverageObjectivePlayerScore() {
 		return averageObjectivePlayerScore;
 	}
 	public void setAverageObjectivePlayerScore(int averageObjectivePlayerScore) {
 		this.averageObjectivePlayerScore = averageObjectivePlayerScore;
 	}
+	/**
+	 * Dominion only.
+	 */
 	public int getAverageTeamObjective() {
 		return averageTeamObjective;
 	}
 	public void setAverageTeamObjective(int averageTeamObjective) {
 		this.averageTeamObjective = averageTeamObjective;
 	}
+	/**
+	 * Dominion only.
+	 */
 	public int getAverageTotalPlayerScore() {
 		return averageTotalPlayerScore;
 	}
@@ -140,6 +173,9 @@ public class AggregatedStatsDto {
 	public void setKillingSpree(int killingSpree) {
 		this.killingSpree = killingSpree;
 	}
+	/**
+	 * Dominion only.
+	 */
 	public int getMaxAssists() {
 		return maxAssists;
 	}
@@ -152,6 +188,9 @@ public class AggregatedStatsDto {
 	public void setMaxChampionsKilled(int maxChampionsKilled) {
 		this.maxChampionsKilled = maxChampionsKilled;
 	}
+	/**
+	 * Dominion only.
+	 */
 	public int getMaxCombatPlayerScore() {
 		return maxCombatPlayerScore;
 	}
@@ -170,42 +209,63 @@ public class AggregatedStatsDto {
 	public void setMaxLargestKillingSpree(int maxLargestKillingSpree) {
 		this.maxLargestKillingSpree = maxLargestKillingSpree;
 	}
+	/**
+	 * Dominion only.
+	 */
 	public int getMaxNodeCapture() {
 		return maxNodeCapture;
 	}
 	public void setMaxNodeCapture(int maxNodeCapture) {
 		this.maxNodeCapture = maxNodeCapture;
 	}
+	/**
+	 * Dominion only.
+	 */
 	public int getMaxNodeCaptureAssist() {
 		return maxNodeCaptureAssist;
 	}
 	public void setMaxNodeCaptureAssist(int maxNodeCaptureAssist) {
 		this.maxNodeCaptureAssist = maxNodeCaptureAssist;
 	}
+	/**
+	 * Dominion only.
+	 */
 	public int getMaxNodeNeutralize() {
 		return maxNodeNeutralize;
 	}
 	public void setMaxNodeNeutralize(int maxNodeNeutralize) {
 		this.maxNodeNeutralize = maxNodeNeutralize;
 	}
+	/**
+	 * Dominion only.
+	 */
 	public int getMaxNodeNeutralizeAssist() {
 		return maxNodeNeutralizeAssist;
 	}
 	public void setMaxNodeNeutralizeAssist(int maxNodeNeutralizeAssist) {
 		this.maxNodeNeutralizeAssist = maxNodeNeutralizeAssist;
 	}
+	/**
+	 * Only returned for ranked statistics.
+	 */
 	public int getMaxNumDeaths() {
 		return maxNumDeaths;
 	}
 	public void setMaxNumDeaths(int maxNumDeaths) {
 		this.maxNumDeaths = maxNumDeaths;
 	}
+	/**
+	 * Dominion only.
+	 */
 	public int getMaxObjectivePlayerScore() {
 		return maxObjectivePlayerScore;
 	}
 	public void setMaxObjectivePlayerScore(int maxObjectivePlayerScore) {
 		this.maxObjectivePlayerScore = maxObjectivePlayerScore;
 	}
+	/**
+	 * Dominion only.
+	 */
 	public int getMaxTeamObjective() {
 		return maxTeamObjective;
 	}
@@ -224,6 +284,9 @@ public class AggregatedStatsDto {
 	public void setMaxTimeSpentLiving(int maxTimeSpentLiving) {
 		this.maxTimeSpentLiving = maxTimeSpentLiving;
 	}
+	/**
+	 * Dominion only.
+	 */
 	public int getMaxTotalPlayerScore() {
 		return maxTotalPlayerScore;
 	}
@@ -284,6 +347,9 @@ public class AggregatedStatsDto {
 	public void setTotalDamageTaken(int totalDamageTaken) {
 		this.totalDamageTaken = totalDamageTaken;
 	}
+	/**
+	 * Only returned for ranked statistics.
+	 */
 	public int getTotalDeathsPerSession() {
 		return totalDeathsPerSession;
 	}
@@ -332,12 +398,18 @@ public class AggregatedStatsDto {
 	public void setTotalNeutralMinionsKilled(int totalNeutralMinionsKilled) {
 		this.totalNeutralMinionsKilled = totalNeutralMinionsKilled;
 	}
+	/**
+	 * Dominion only.
+	 */
 	public int getTotalNodeCapture() {
 		return totalNodeCapture;
 	}
 	public void setTotalNodeCapture(int totalNodeCapture) {
 		this.totalNodeCapture = totalNodeCapture;
 	}
+	/**
+	 * Dominion only.
+	 */
 	public int getTotalNodeNeutralize() {
 		return totalNodeNeutralize;
 	}
