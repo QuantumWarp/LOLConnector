@@ -44,7 +44,6 @@ public class LOLStaticDataConnector extends LOLConnector {
 	 * Retrieves champion list.
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
-	 * @param summonerId
 	 * @return JSON champion list info
 	 * @throws RequestException 
 	 */
@@ -94,7 +93,6 @@ public class LOLStaticDataConnector extends LOLConnector {
 	 * Retrieves item list.
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
-	 * @param summonerId
 	 * @return JSON item list info
 	 * @throws RequestException 
 	 */
@@ -144,7 +142,6 @@ public class LOLStaticDataConnector extends LOLConnector {
 	 * Retrieves mastery list.
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
-	 * @param masteryId
 	 * @return JSON mastery list info
 	 * @throws RequestException 
 	 */
@@ -194,7 +191,6 @@ public class LOLStaticDataConnector extends LOLConnector {
 	 * Retrieves rune list.
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
-	 * @param runeId
 	 * @return JSON rune list info
 	 * @throws RequestException 
 	 */
@@ -244,7 +240,6 @@ public class LOLStaticDataConnector extends LOLConnector {
 	 * Retrieves summoner spell list.
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
-	 * @param summonerSpellId
 	 * @return JSON summoner spell list info
 	 * @throws RequestException 
 	 */
@@ -294,7 +289,6 @@ public class LOLStaticDataConnector extends LOLConnector {
 	 * Retrieve realm data.
 	 * @param region (must be provided)
 	 * @param version (if null defaults to latest)
-	 * @param realmId
 	 * @return JSON realm info
 	 * @throws RequestException 
 	 */
