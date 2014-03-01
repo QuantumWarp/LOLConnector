@@ -1,10 +1,12 @@
 package john_lowther.leagueoflegends.lolconnector.connector;
 
+import java.awt.Point;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 
 import john_lowther.leagueoflegends.lolconnector.dataenums.ConnectionResponse;
 import john_lowther.leagueoflegends.lolconnector.exceptions.RequestException;
@@ -16,12 +18,15 @@ import john_lowther.leagueoflegends.lolconnector.fileio.KeyReader;
  */
 public class Connector {
 	private static Connector instance;
+	private Point[] rateLimits = {	new Point(10, 10), 
+									new Point(500, 600)}; //x is time, y is number of requests.
+	private ArrayList<Long> requestTimes = new ArrayList<Long>();
 	
 	/**
 	 * Gets the instance of the Connector object.
 	 * @return Connector
 	 */
- 	public static Connector getInstance() {
+	public static Connector getInstance() {
 		if (instance == null) {
 			instance = new Connector();
 		}
@@ -58,7 +63,7 @@ public class Connector {
 	 * @throws RequestException 
 	 */
 	public String submitRequest(String baseUrl, String apikey) throws RequestException {
-		return submitRequest(baseUrl + (baseUrl.contains("?") ? "&" : "?") + "api_key=" + apikey);
+		return submitRequest(baseUrl + (baseUrl.contains("?") ? "&" : "?") + "api_key=" + apikey, true);
 	}
 	
 	/**
@@ -70,7 +75,7 @@ public class Connector {
 	 * @throws RequestException 
 	 */
 	public String submitRequest(String baseUrl, String apikey, boolean count) throws RequestException {
-		return submitRequest(baseUrl + (baseUrl.contains("?") ? "&" : "?") + "api_key=" + apikey);
+		return submitRequest(baseUrl + (baseUrl.contains("?") ? "&" : "?") + "api_key=" + apikey, count);
 	}
 	
 	/**
@@ -79,8 +84,10 @@ public class Connector {
 	 * @return response
 	 * @throws RequestException 
 	 */
-	public String submitRequest(String urlString) throws RequestException {
+	public String submitRequest(String urlString, boolean count) throws RequestException {
 		HttpURLConnection connection = null;  
+		
+		if (count) checkRate();
 		
 		try {
 			URL url = new URL(urlString);
@@ -105,8 +112,45 @@ public class Connector {
 				return null;
 			}
 		} finally {
+			if (count) saveTime();
+			
 			if(connection != null) {
 				connection.disconnect(); 
+			}
+		}
+	}
+
+	/**
+	 * Saves the time this operation was completed.
+	 * Clears excess list periodically.
+	 */
+	private void saveTime() {
+		requestTimes.add(0, System.currentTimeMillis());
+		
+		if (requestTimes.size() >= 1000) {
+			requestTimes.subList(500, requestTimes.size()).clear();
+		}
+	}
+
+	/**
+	 * Checks the rate isn't being exceeded.
+	 */
+	private void checkRate() {
+		long timeElapsed;
+		long toTest;
+		
+		for (Point p : rateLimits) {
+			if (p.x <= requestTimes.size()) {
+				timeElapsed = System.currentTimeMillis() - requestTimes.get(p.x - 1);
+				toTest = p.y * 1000;
+
+				if (timeElapsed < toTest) {
+					try {
+						Thread.sleep(toTest -  timeElapsed);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
 			}
 		}
 	}
