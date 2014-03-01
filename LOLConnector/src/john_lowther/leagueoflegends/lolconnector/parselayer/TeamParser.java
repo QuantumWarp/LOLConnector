@@ -16,7 +16,7 @@ public class TeamParser extends Parser {
 	
 	/**
 	 * Get ranked stats by summoner ID. Includes statistics for Twisted Treeline and Summoner's Rift.
-	 * @return PlayerStatsSummaryListDto
+	 * @return List<TeamDto>
 	 */
 	public List<TeamDto> getTeamsbySummonerId(long summonerId) 
 			throws NotSupportedException, RequestException {
@@ -25,7 +25,7 @@ public class TeamParser extends Parser {
 	
 	/**
 	 * Custom ranked stats request by summoner ID. Includes statistics for Twisted Treeline and Summoner's Rift.
-	 * @return PlayerStatsSummaryListDto
+	 * @return List<TeamDto>
 	 */
 	public List<TeamDto> customTeamsbySummonerIdRequest(Region region, long summonerId) 
 			throws NotSupportedException, RequestException {
@@ -35,7 +35,7 @@ public class TeamParser extends Parser {
 	
 	/**
 	 * Get teams mapped by team ID for a given list of team IDs.
-	 * @return PlayerStatsSummaryListDto
+	 * @return Map<String, TeamDto>
 	 */
 	public Map<String, TeamDto> getTeamsbyTeamIds(long... teamIds) 
 			throws NotSupportedException, RequestException {
@@ -44,7 +44,7 @@ public class TeamParser extends Parser {
 	
 	/**
 	 * Custom teams request mapped by team ID for a given list of team IDs.
-	 * @return PlayerStatsSummaryListDto
+	 * @return Map<String, TeamDto>
 	 */
 	public Map<String, TeamDto> customTeamsbyTeamIdsRequest(Region region, long... teamIds) 
 			throws NotSupportedException, RequestException {

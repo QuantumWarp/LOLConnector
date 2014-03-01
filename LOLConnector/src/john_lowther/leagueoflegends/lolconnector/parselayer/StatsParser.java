@@ -32,7 +32,7 @@ public class StatsParser extends Parser {
 	
 	/**
 	 * Get ranked stats by summoner ID. Includes statistics for Twisted Treeline and Summoner's Rift.
-	 * @return PlayerStatsSummaryListDto
+	 * @return RankedStatsDto
 	 */
 	public RankedStatsDto getPlayerRanked(long summonerId) 
 			throws NotSupportedException, RequestException {
@@ -41,7 +41,7 @@ public class StatsParser extends Parser {
 	
 	/**
 	 * Custom ranked stats request by summoner ID. Includes statistics for Twisted Treeline and Summoner's Rift.
-	 * @return PlayerStatsSummaryListDto
+	 * @return RankedStatsDto
 	 */
 	public RankedStatsDto customPlayerRankedRequest(Region region, long summonerId, Season season) 
 			throws NotSupportedException, RequestException {

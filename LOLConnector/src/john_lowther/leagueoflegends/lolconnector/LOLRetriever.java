@@ -27,7 +27,11 @@ public class LOLRetriever {
 	}
 	
 	public long getSummonerId(String name) throws NotSupportedException, RequestException {
-		return summonerRequest.getSummonerId(defaultRegion, name);
+		return getSummonerId(defaultRegion, name);
+	}
+	
+	public long getSummonerId(Region region, String name) throws NotSupportedException, RequestException {
+		return summonerRequest.getSummonerId(region, name);
 	}
 	
 	public void setApiKey(String apikey) {
