@@ -1,5 +1,6 @@
 package john_lowther.leagueoflegends.lolconnector.dataobjects.lolstaticdata.champion;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,7 +8,7 @@ import java.util.List;
  * @author John Lowther
  */
 public class BlockDto {
-	private List<BlockItemDto> items;
+	private List<BlockItemDto> items =  new ArrayList<BlockItemDto>();
 	private String type;
 	
 	public List<BlockItemDto> getItems() {

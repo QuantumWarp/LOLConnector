@@ -8,7 +8,7 @@ public class RunePageDto {
 	private boolean current;
 	private long id;
 	private String name;
-	private RuneSlotDto slots;
+	private RuneSlotDto slots = new RuneSlotDto();
 	
 	public boolean isCurrent() {
 		return current;

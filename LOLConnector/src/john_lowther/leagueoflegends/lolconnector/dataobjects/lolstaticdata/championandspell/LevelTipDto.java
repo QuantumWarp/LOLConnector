@@ -1,5 +1,6 @@
 package john_lowther.leagueoflegends.lolconnector.dataobjects.lolstaticdata.championandspell;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,8 +8,8 @@ import java.util.List;
  * @author John Lowther
  */
 public class LevelTipDto {
-	private List<String> effect;
-	private List<String> label;
+	private List<String> effect = new ArrayList<String>();
+	private List<String> label = new ArrayList<String>();
 	
 	public List<String> getEffect() {
 		return effect;

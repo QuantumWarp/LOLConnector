@@ -1,5 +1,6 @@
 package john_lowther.leagueoflegends.lolconnector.dataobjects.team;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,7 +9,7 @@ import java.util.List;
  */
 public class TeamStatSummaryDto {
 	private String fullId;	
-	private List<TeamStatDetailDto> teamStatDetails;
+	private List<TeamStatDetailDto> teamStatDetails = new ArrayList<TeamStatDetailDto>();
 	
 	public String getFullId() {
 		return fullId;

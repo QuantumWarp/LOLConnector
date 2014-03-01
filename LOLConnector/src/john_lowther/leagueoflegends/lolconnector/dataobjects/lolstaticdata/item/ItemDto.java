@@ -1,5 +1,7 @@
 package john_lowther.leagueoflegends.lolconnector.dataobjects.lolstaticdata.item;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -14,22 +16,22 @@ public class ItemDto {
 	private boolean consumed;	
 	private int depth;	
 	private String description;	
-	private List<String> from;
-	private GoldDto gold;	
+	private List<String> from = new ArrayList<String>();
+	private GoldDto gold =  new GoldDto();	
 	private String group;	
 	private boolean hideFromAll;	
-	private ImageDto image;	
+	private ImageDto image = new ImageDto();	
 	private boolean inStore;	
-	private List<String> into;
-	private Map<String, Boolean> maps;	
+	private List<String> into = new ArrayList<String>();
+	private Map<String, Boolean> maps =  new HashMap<String, Boolean>();	
 	private String name;
 	private String plaintext;
 	private String requiredChampion;
-	private MetaDataDto rune;
+	private MetaDataDto rune = new MetaDataDto();
 	private int specialRecipe;
 	private int stacks;
-	private BasicDataStatsDto stats;
-	private List<String> tags;
+	private BasicDataStatsDto stats = new BasicDataStatsDto();
+	private List<String> tags = new ArrayList<String>();
 	
 	public String getColloq() {
 		return colloq;

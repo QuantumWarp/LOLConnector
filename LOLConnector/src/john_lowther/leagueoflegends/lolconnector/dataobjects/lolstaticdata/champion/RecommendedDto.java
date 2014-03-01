@@ -1,5 +1,6 @@
 package john_lowther.leagueoflegends.lolconnector.dataobjects.lolstaticdata.champion;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,7 +8,7 @@ import java.util.List;
  * @author John Lowther
  */
 public class RecommendedDto {
-	private List<BlockDto> blocks;
+	private List<BlockDto> blocks = new ArrayList<BlockDto>();
 	private String champion;	
 	private String map;	
 	private String mode;

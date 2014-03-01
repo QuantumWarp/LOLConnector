@@ -5,7 +5,7 @@ package john_lowther.leagueoflegends.lolconnector.dataobjects.stats;
  * @author John Lowther
  */
 public class PlayerStatsSummaryDto {
-	private AggregatedStatsDto aggregatedStats;
+	private AggregatedStatsDto aggregatedStats = new AggregatedStatsDto();
 	private int losses;
 	private long modifyDate;
 	private String playerStatSummaryType;

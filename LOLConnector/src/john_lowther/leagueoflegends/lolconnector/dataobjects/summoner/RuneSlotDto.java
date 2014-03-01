@@ -5,7 +5,7 @@ package john_lowther.leagueoflegends.lolconnector.dataobjects.summoner;
  * @author John Lowther
  */
 public class RuneSlotDto {
-	private RuneDto rune;
+	private RuneDto rune = new RuneDto();
 	private int runeSlotId;
 	
 	public RuneDto getRune() {

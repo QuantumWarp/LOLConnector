@@ -1,5 +1,6 @@
 package john_lowther.leagueoflegends.lolconnector.dataobjects.team;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -13,7 +14,7 @@ public class TeamDto {
 	private Date lastGameDate;	
 	private Date lastJoinDate;	
 	private Date lastJoinedRankedTeamQueueDate;	
-	private List<MatchHistorySummaryDto> matchHistory;
+	private List<MatchHistorySummaryDto> matchHistory = new ArrayList<MatchHistorySummaryDto>();
 	private MessageOfDayDto messageOfDay;	
 	private Date modifyDate;	
 	private String name;	

@@ -7,7 +7,7 @@ package john_lowther.leagueoflegends.lolconnector.dataobjects.stats;
 public class ChampionStatsDto {
 	private int id;
 	private String name;
-	private AggregatedStatsDto stats;
+	private AggregatedStatsDto stats = new AggregatedStatsDto();
 	
 	public int getId() {
 		return id;

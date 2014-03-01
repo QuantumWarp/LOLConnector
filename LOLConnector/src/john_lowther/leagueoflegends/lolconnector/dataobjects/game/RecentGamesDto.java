@@ -1,5 +1,6 @@
 package john_lowther.leagueoflegends.lolconnector.dataobjects.game;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,7 +8,7 @@ import java.util.List;
  * @author John Lowther
  */
 public class RecentGamesDto {
-	private List<GameDto> games;
+	private List<GameDto> games = new ArrayList<GameDto>();
 	private long summonerId;
 	
 	public List<GameDto> getGames() {

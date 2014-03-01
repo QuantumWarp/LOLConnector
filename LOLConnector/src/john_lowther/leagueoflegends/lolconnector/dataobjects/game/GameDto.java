@@ -1,5 +1,6 @@
 package john_lowther.leagueoflegends.lolconnector.dataobjects.game;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -9,7 +10,7 @@ import java.util.List;
 public class GameDto {
 	private int championId;
 	private long createDate;
-	private List<PlayerDto> fellowPlayers;
+	private List<PlayerDto> fellowPlayers = new ArrayList<PlayerDto>();
 	private long gameId;
 	private String gameMode;
 	private String gameType;
@@ -18,7 +19,7 @@ public class GameDto {
 	private int mapId;
 	private int spell1;
 	private int spell2;
-	private RawStatsDto stats;
+	private RawStatsDto stats = new RawStatsDto();
 	private String subType;
 	private int teamId;
 	

@@ -1,5 +1,6 @@
 package john_lowther.leagueoflegends.lolconnector.dataobjects.team;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,7 +8,7 @@ import java.util.List;
  * @author John Lowther
  */
 public class RosterDto {
-	private	List<TeamMemberInfoDto>	memberList;
+	private	List<TeamMemberInfoDto>	memberList = new ArrayList<TeamMemberInfoDto>();
 	private long ownerId;
 	
 	public List<TeamMemberInfoDto> getMemberList() {

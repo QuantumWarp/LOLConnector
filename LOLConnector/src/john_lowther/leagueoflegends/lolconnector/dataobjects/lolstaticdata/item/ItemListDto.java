@@ -1,5 +1,7 @@
 package john_lowther.leagueoflegends.lolconnector.dataobjects.lolstaticdata.item;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -10,10 +12,10 @@ import john_lowther.leagueoflegends.lolconnector.dataobjects.lolstaticdata.runea
  * @author John Lowther
  */
 public class ItemListDto {
-	private BasicDataDto basic;
-	private Map<String, ItemDto> data;
-	private List<GroupDto> groups;
-	private List<ItemTreeDto> tree;
+	private BasicDataDto basic = new BasicDataDto();
+	private Map<String, ItemDto> data = new HashMap<String, ItemDto>();
+	private List<GroupDto> groups = new ArrayList<GroupDto>();
+	private List<ItemTreeDto> tree = new ArrayList<ItemTreeDto>();
 	private String type;
 	private String version;
 	

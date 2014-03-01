@@ -12,7 +12,7 @@ public class LeagueItemDto {
 	private long lastPlayed;	
 	private String leagueName;
 	private int leaguePoints;	
-	private MiniSeriesDto miniSeries;	
+	private MiniSeriesDto miniSeries = new MiniSeriesDto();	
 	private String playerOrTeamId;	
 	private String playerOrTeamName;	
 	private String queueType;	

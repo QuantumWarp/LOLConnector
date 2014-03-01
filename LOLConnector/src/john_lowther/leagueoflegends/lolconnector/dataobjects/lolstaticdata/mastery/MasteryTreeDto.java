@@ -1,5 +1,6 @@
 package john_lowther.leagueoflegends.lolconnector.dataobjects.lolstaticdata.mastery;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,9 +8,9 @@ import java.util.List;
  * @author John Lowther
  */
 public class MasteryTreeDto {
-	private List<MasteryTreeListDto> Defense;
-	private List<MasteryTreeListDto> Offense;
-	private List<MasteryTreeListDto> Utility;
+	private List<MasteryTreeListDto> Defense = new ArrayList<MasteryTreeListDto>();
+	private List<MasteryTreeListDto> Offense = new ArrayList<MasteryTreeListDto>();
+	private List<MasteryTreeListDto> Utility = new ArrayList<MasteryTreeListDto>();
 	
 	public List<MasteryTreeListDto> getDefense() {
 		return Defense;

@@ -1,5 +1,6 @@
 package john_lowther.leagueoflegends.lolconnector.dataobjects.lolstaticdata.champion;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import john_lowther.leagueoflegends.lolconnector.dataobjects.lolstaticdata.ImageDto;
@@ -11,24 +12,24 @@ import john_lowther.leagueoflegends.lolconnector.dataobjects.lolstaticdata.champ
  * @author John Lowther
  */
 public class ChampionSpellDto {
-	private List<Integer> cooldown;	
+	private List<Integer> cooldown = new ArrayList<Integer>();	
 	private String cooldownBurn;	
-	private List<Integer> cost;
+	private List<Integer> cost = new ArrayList<Integer>();
 	private String costBurn;
 	private String costType;
 	private String description;
-	private List<Object> effect;	
-	private List<String> effectBurn;	
+	private List<Object> effect = new ArrayList<Object>();	
+	private List<String> effectBurn = new ArrayList<String>();	
 	private String id;
-	private ImageDto image;	
-	private LevelTipDto	leveltip;
+	private ImageDto image = new ImageDto();	
+	private LevelTipDto	leveltip = new LevelTipDto();
 	private int	maxrank;
 	private String name;
 	private Object range;
 	private String rangeBurn;
 	private String resource;
 	private String tooltip;
-	private List<SpellVarsDto> vars;
+	private List<SpellVarsDto> vars = new ArrayList<SpellVarsDto>();
 	
 	public List<Integer> getCooldown() {
 		return cooldown;

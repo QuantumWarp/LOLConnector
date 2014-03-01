@@ -1,5 +1,6 @@
 package john_lowther.leagueoflegends.lolconnector.dataobjects.lolstaticdata.mastery;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -7,8 +8,8 @@ import java.util.Map;
  * @author John Lowther
  */
 public class MasteryListDto {
-	private Map<String, MasteryDto> data;
-	private MasteryTreeDto tree;
+	private Map<String, MasteryDto> data = new HashMap<String, MasteryDto>();
+	private MasteryTreeDto tree = new MasteryTreeDto();
 	private String type;
 	private String version;
 	

@@ -1,5 +1,6 @@
 package john_lowther.leagueoflegends.lolconnector.dataobjects.lolstaticdata.mastery;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import john_lowther.leagueoflegends.lolconnector.dataobjects.lolstaticdata.ImageDto;
@@ -9,9 +10,9 @@ import john_lowther.leagueoflegends.lolconnector.dataobjects.lolstaticdata.Image
  * @author John Lowther
  */
 public class MasteryDto {
-	private List<String> description;	
+	private List<String> description = new ArrayList<String>();	
 	private int	id;	
-	private ImageDto image;
+	private ImageDto image = new ImageDto();
 	private String name;
 	private String prereq;
 	private int	ranks;

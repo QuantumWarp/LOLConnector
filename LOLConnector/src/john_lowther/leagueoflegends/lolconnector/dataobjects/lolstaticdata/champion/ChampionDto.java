@@ -1,5 +1,6 @@
 package john_lowther.leagueoflegends.lolconnector.dataobjects.lolstaticdata.champion;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import john_lowther.leagueoflegends.lolconnector.dataobjects.lolstaticdata.ImageDto;
@@ -9,22 +10,22 @@ import john_lowther.leagueoflegends.lolconnector.dataobjects.lolstaticdata.Image
  * @author John Lowther
  */
 public class ChampionDto {
-	private List<String> allytips;	
+	private List<String> allytips = new ArrayList<String>();	
 	private String blurb;	
-	private List<String> enemytips;
+	private List<String> enemytips = new ArrayList<String>();
 	private String id;	
-	private ImageDto image;	
-	private InfoDto	info;
+	private ImageDto image = new ImageDto();	
+	private InfoDto	info = new InfoDto();
 	private String key;	
 	private String lore;	
 	private String name;	
 	private String partype;	
-	private PassiveDto passive;	
-	private List<RecommendedDto> recommended;	
-	private List<SkinDto> skins;
-	private List<ChampionSpellDto> spells;	
-	private StatsDto stats;
-	private List<String> tags;
+	private PassiveDto passive = new PassiveDto();	
+	private List<RecommendedDto> recommended = new ArrayList<RecommendedDto>();	
+	private List<SkinDto> skins = new ArrayList<SkinDto>();
+	private List<ChampionSpellDto> spells = new ArrayList<ChampionSpellDto>();	
+	private StatsDto stats = new StatsDto();
+	private List<String> tags = new ArrayList<String>();
 	private String title;
 	
 	public List<String> getAllytips() {

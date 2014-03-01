@@ -8,7 +8,7 @@ import john_lowther.leagueoflegends.lolconnector.dataobjects.lolstaticdata.Image
  */
 public class PassiveDto {
 	private String description;
-	private ImageDto image;
+	private ImageDto image = new ImageDto();
 	private String name;
 	
 	public String getDescription() {

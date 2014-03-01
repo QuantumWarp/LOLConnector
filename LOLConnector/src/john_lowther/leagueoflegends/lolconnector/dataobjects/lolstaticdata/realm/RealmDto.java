@@ -1,5 +1,6 @@
 package john_lowther.leagueoflegends.lolconnector.dataobjects.lolstaticdata.realm;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -12,7 +13,7 @@ public class RealmDto {
 	private String dd;
 	private String l;
 	private String lg;
-	private Map<String, String> n;
+	private Map<String, String> n = new HashMap<String, String>();
 	private int profileiconmax;
 	private String store;
 	private String v;

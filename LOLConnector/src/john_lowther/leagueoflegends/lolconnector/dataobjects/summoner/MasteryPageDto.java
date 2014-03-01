@@ -1,5 +1,6 @@
 package john_lowther.leagueoflegends.lolconnector.dataobjects.summoner;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,7 +11,7 @@ public class MasteryPageDto {
 	private boolean current;
 	private long id;
 	private String name;
-	private List<TalentDto> talents;
+	private List<TalentDto> talents = new ArrayList<TalentDto>();
 	
 	public boolean isCurrent() {
 		return current;

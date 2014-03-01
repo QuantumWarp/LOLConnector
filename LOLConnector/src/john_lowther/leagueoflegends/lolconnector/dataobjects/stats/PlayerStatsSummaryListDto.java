@@ -1,5 +1,6 @@
 package john_lowther.leagueoflegends.lolconnector.dataobjects.stats;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,7 +8,7 @@ import java.util.List;
  * @author John Lowther
  */
 public class PlayerStatsSummaryListDto {
-	private List<PlayerStatsSummaryDto> playerStatSummaries;
+	private List<PlayerStatsSummaryDto> playerStatSummaries = new ArrayList<PlayerStatsSummaryDto>();
 	private long summonerId;
 	
 	public List<PlayerStatsSummaryDto> getPlayerStatSummaries() {

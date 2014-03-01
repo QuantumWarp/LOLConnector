@@ -1,5 +1,6 @@
 package john_lowther.leagueoflegends.lolconnector.dataobjects.lolstaticdata.champion;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -7,9 +8,9 @@ import java.util.Map;
  * @author John Lowther
  */
 public class ChampionListDto {
-	private Map<String, ChampionDto> data;	
+	private Map<String, ChampionDto> data = new HashMap<String, ChampionDto>();	
 	private String format;	
-	private Map<String, String> keys;
+	private Map<String, String> keys = new HashMap<String, String>();
 	private String type;	
 	private String version;
 	

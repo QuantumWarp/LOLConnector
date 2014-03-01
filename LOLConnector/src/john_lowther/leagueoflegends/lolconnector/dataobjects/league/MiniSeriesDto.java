@@ -1,5 +1,6 @@
 package john_lowther.leagueoflegends.lolconnector.dataobjects.league;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,7 +9,7 @@ import java.util.List;
  */
 public class MiniSeriesDto {
 	private int losses;
-	private List<Character> progress;
+	private List<Character> progress = new ArrayList<Character>();
 	private int target;
 	private long timeLeftToPlayMillis;
 	private int wins;

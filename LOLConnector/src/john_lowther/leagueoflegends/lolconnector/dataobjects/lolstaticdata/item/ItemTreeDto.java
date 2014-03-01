@@ -1,5 +1,6 @@
 package john_lowther.leagueoflegends.lolconnector.dataobjects.lolstaticdata.item;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,7 +9,7 @@ import java.util.List;
  */
 public class ItemTreeDto {
 	private String header;
-	private List<String> tags;
+	private List<String> tags = new ArrayList<String>();
 	
 	public String getHeader() {
 		return header;

@@ -1,5 +1,6 @@
 package john_lowther.leagueoflegends.lolconnector.dataobjects.summoner;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,7 +8,7 @@ import java.util.List;
  * @author John Lowther
  */
 public class RunePagesDto {
-	private List<RunePageDto> pages;
+	private List<RunePageDto> pages = new ArrayList<RunePageDto>();
 	private long summonerId;
 	
 	public List<RunePageDto> getPages() {

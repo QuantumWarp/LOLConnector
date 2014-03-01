@@ -1,5 +1,6 @@
 package john_lowther.leagueoflegends.lolconnector.dataobjects.league;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,7 +8,7 @@ import java.util.List;
  * @author John Lowther
  */
 public class LeagueDto {
-	private List<LeagueItemDto> entries;
+	private List<LeagueItemDto> entries = new ArrayList<LeagueItemDto>();
 	private String name;
 	private String participantId;
 	private String queue;

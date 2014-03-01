@@ -1,5 +1,6 @@
 package john_lowther.leagueoflegends.lolconnector.dataobjects.lolstaticdata.rune;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import john_lowther.leagueoflegends.lolconnector.dataobjects.lolstaticdata.runeanditem.BasicDataDto;
@@ -9,8 +10,8 @@ import john_lowther.leagueoflegends.lolconnector.dataobjects.lolstaticdata.runea
  * @author John Lowther
  */
 public class RuneListDto {
-	private BasicDataDto basic;
-	private Map<String, RuneDto> data;
+	private BasicDataDto basic = new BasicDataDto();
+	private Map<String, RuneDto> data = new HashMap<String, RuneDto>();
 	private String type;
 	private String version;
 	
